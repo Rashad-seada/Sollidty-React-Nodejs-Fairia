@@ -9,7 +9,7 @@ function SearchBar() {
        
         <input
           type="text"
-          className="w-full bg-slate-950 flex rounded-lg pl-2 text-sky-600 outline-0"
+          className="w-full bg-slate-950 flex rounded-lg pl-2 text-sky-100 outline-0"
           placeholder="Search Of Tunder"
           style={{backgroundColor:"rgb(12,5,51)"}}
         />
