@@ -16,13 +16,27 @@ contract TenderApp {
     }
 
     Tender[] tender;
+    uint256 private latestIndex;
+
+    constructor() {
+        latestIndex = 0;
+    }
 
     function getLeatestTenders() public view returns (Tender[10] memory){
-        
+       require(tender.length > 0, "No tenders available");
+
+        // Create an array to store the latest tenders
+        Tender[10] memory latestTenders;
+
+        // Start from the latest index and retrieve the 10 latest tenders
+        for (uint256 i = 0; i < 10 && latestIndex >= i; i++) {
+            latestTenders[i] = tender[latestIndex - i];
+        }
+
+        return latestTenders;
     }
 
     function AnnounceTender(
-        address auther,
         string memory title,
         string memory description,
         string memory keyword,
@@ -30,7 +44,11 @@ contract TenderApp {
         uint256 estimatedCost
     ) public {
 
+        tender.push(Tender(msg.sender, title, description, keyword, bidBond, estimatedCost,block.timestamp));
+        emit Announce();
 
+        // Update the latest index
+        latestIndex = tender.length - 1;
 
     }
     
