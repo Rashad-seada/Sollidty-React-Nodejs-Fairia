@@ -20,7 +20,9 @@ function ExploreTender() {
           <Card title="First" info="Ibrahim  shoeib" />
           <Card title="second" info="Rashad" className="p-10" />
           <Card title="third" info="Ahmed" />
-          
+          <Card title="First" info="Ibrahim  shoeib" />
+          <Card title="second" info="Rashad" className="p-10" />
+          <Card title="third" info="Ahmed" />
       </div>
       <Footer />
     </div>
