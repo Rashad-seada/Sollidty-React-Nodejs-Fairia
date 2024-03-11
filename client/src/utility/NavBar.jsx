@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom/client'
 function NavBar() {
 
   return (
+    
     <nav className="bg-slate-950 shadow-lg p-5">
       <div className="md:flex items-center justify-between py-2 px-8 md:px-12">
         <div className="flex justify-between items-center">
