@@ -14,7 +14,7 @@ function ExploreTender() {
           <p className="bg-slate-950 flex justify-center text-cyan-50"> Explore<span className="text-sky-400">Tender</span> </p>
         </div>
         <div
-          className="flex flex-wrap justify-around w-100% m-40  "
+          className="flex flex-wrap justify-around w-100% m-20  "
           style={{ padding: "10px" }}
         >
           <Card title="First" info="Ibrahim  shoeib" />
