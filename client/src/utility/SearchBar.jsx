@@ -14,6 +14,7 @@ function SearchBar() {
           style={{backgroundColor:"rgb(12,5,51)"}}
         />
         <button type="submit" className="relative p-2 bg-[#0d1829] rounded-full">
+
           <svg
             width="30px"
             height="30px"

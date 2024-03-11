@@ -2,7 +2,9 @@
 const Card = (card) => {
   return (
     <>
+
       <div className="  relative flex w-96 flex-col rounded-2xl bg-slate-950   shadow-md text-slate-50 " style={{border:"solid 2px blue",marginBottom:"60px"}}>
+
         <div
           className="relative mx-4 mt-4 h-96 overflow-hidden rounded-xl   bg-slate-950 bg-clip-border "
           style={{height: "300px",  border:"solid 2px blue"}}>
