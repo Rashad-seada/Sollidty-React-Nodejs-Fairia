@@ -1,6 +1,6 @@
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-function CreateTunder() {
+function CreateTender() {
   return (
     <>
       <NavBar  />
@@ -115,11 +115,9 @@ function CreateTunder() {
           </div>
         </div>
       </div>
-      <label > Ypload pic</label>
-      <input type="file" title="Upload-image "> Choose Your Image</input>
       <Footer />
     </>
   );
 }
 
-export default CreateTunder;
+export default CreateTender;
