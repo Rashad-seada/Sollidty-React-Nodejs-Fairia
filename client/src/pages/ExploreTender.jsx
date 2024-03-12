@@ -9,7 +9,7 @@ function ExploreTender() {
       <NavBar />
 
       <div style={{fontSize:"80px"}}>
-          <p className="bg-slate-950 flex justify-center text-cyan-50"> Explore<span className="text-sky-400">Tender</span> </p>
+          <p className="bg-slate-950 font-semibold flex justify-center text-cyan-50"> Explore<span className="text-sky-400 px-3">Tender</span> </p>
         </div>
 
 
