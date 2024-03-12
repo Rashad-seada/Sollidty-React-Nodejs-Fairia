@@ -1,5 +1,5 @@
-import NavBar from "../utility/NavBar";
-import Footer from "../utility/Footer";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 function CreateTunder() {
   return (
     <>
@@ -24,7 +24,7 @@ function CreateTunder() {
               </svg>
             </div>
             <div className="text-slate-50">
-              Tunder
+              Tender
               <span className="text-sky-400"> Form</span>
             </div>
           </div>
@@ -37,7 +37,7 @@ function CreateTunder() {
                 Create New Tunder
               </h3>
               <p className="mt-1.5 text-sm font-medium text-sky-100">
-                Welcome back, enter your Tunder.
+                Welcome back, enter your Tender.
               </p>
             </div>
             <div className="p-6 pt-0">

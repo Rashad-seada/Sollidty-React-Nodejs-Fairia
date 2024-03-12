@@ -6,14 +6,15 @@ const Header = ()=> {
   {/* component */}
   <div className="w-full">
     
-    <NavBar />
     <div className="flex bg-slate-950" style={{ height: 600 }}>
       <div className="flex items-center text-center lg:text-left px-8 md:px-12 lg:w-1/2">
         <div>
-          <p className="text-8xl font-semibold text-slate-50 ">
+          <p className="text-7xl font-semibold text-slate-50 pb-5">
             Select Your  <span className="text-sky-400"> Contractor</span>
           </p>
-          <p className="  mt-7 mb-10 text-lg text-gray-500 ">
+
+
+          <p className="  mt-7 mb-10 text-lg text-gray-500 pb-5">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
             commodi cum cupiditate ducimus, fugit harum id necessitatibus odio
             quam quasi, quibusdam rem tempora voluptates. Cumque debitis

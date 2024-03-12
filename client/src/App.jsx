@@ -1,8 +1,8 @@
-import Home from "./components/Home";
-import CreateTunder from "./components/CreateTunder";
-import ExploreTender from "./components/ExploreTender";
+import Home from "./pages/Home";
+import CreateTunder from "./pages/CreateTunder";
+import ExploreTender from "./pages/ExploreTender";
 import { Routes, Route } from "react-router-dom";
-import About from "./components/About";
+import About from "./pages/About";
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 // eslint-disable-next-line no-unused-vars

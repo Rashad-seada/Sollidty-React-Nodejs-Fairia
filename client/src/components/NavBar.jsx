@@ -11,7 +11,7 @@ function NavBar() {
       <div className="md:flex items-center justify-between py-2 px-8 md:px-12">
         <div className="flex justify-between items-center">
           <div className="text-2xl font-bold text-slate-50	 md:text-3xl">
-            <a href="#">Solidity</a>
+            <a href="/">Solidity</a>
           </div>
           <div className="md:hidden">
             <button

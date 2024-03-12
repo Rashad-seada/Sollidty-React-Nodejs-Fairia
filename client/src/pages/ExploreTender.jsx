@@ -1,8 +1,8 @@
 import React from "react";
-import NavBar from "../utility/NavBar";
-import Footer from "../utility/Footer";
-import Card from "../utility/Card";
-import SearchBar from "../utility/SearchBar";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import Card from "../components/Card";
+import SearchBar from "../components/SearchBar";
 function ExploreTender() {
   return (
     <div className="bg-slate-950">
