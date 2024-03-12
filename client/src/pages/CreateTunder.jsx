@@ -115,6 +115,8 @@ function CreateTunder() {
           </div>
         </div>
       </div>
+      <label > Ypload pic</label>
+      <input type="file" title="Upload-image "> Choose Your Image</input>
       <Footer />
     </>
   );
