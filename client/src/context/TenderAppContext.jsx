@@ -1,5 +1,5 @@
-import React , {Children, useEffect, useState} from "react";
-import { ethers } from 'ethers';
+import React, { useEffect, useState } from "react";
+import { ethers } from "ethers";
 
 import {contractABI , contractAddress } from '../utils/constants'
 
@@ -20,10 +20,10 @@ const getEthereumContract = () => {
     })
 }
 
-export const TenderAppProvider = ({children}) => {
+export const TenderAppProvider = ({ children }) => {
     return (
-        <TenderAppContext.Provider value={{}}>
-            {children}
+        <TenderAppContext.Provider>
+            { children }
         </TenderAppContext.Provider>
     )
 } 
