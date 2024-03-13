@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { useState } from "react";
 
 function CreateTender() {
+
   const [From, setFrom] = useState("");
   const [Title, setTitle] = useState("");
   const [Description, setDescription] = useState("");
@@ -76,8 +77,8 @@ function CreateTender() {
               </svg>
             </div>
             <div className="text-slate-50 animate-pulse">
-              Tender
-              <span className="text-sky-400"> Form</span>
+              Create
+              <span className="text-sky-400"> Tender</span>
             </div>
           </div>
         </a>
@@ -276,7 +277,7 @@ function CreateTender() {
                   </div>
                 </div>
 
-                <div className="mt-4 pt-10 flex items-center justify-around  gap-x-2">
+                <div className="mt-4 pt-10 flex items-center justify-around  gap-x-2 animate-pulse">
                   <a
                     className="bg-sky-600  text-slate-100 inline-flex items-center justify-center rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:ring hover:ring-white h-10 px-4 py-2 duration-200"
                     href="/"

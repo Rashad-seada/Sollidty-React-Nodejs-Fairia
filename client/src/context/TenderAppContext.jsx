@@ -21,8 +21,12 @@ const getEthereumContract = () => {
 }
 
 export const TenderAppProvider = ({ children }) => {
+
+    
+
+
     return (
-        <TenderAppContext.Provider>
+        <TenderAppContext.Provider value={{}}>
             { children }
         </TenderAppContext.Provider>
     )

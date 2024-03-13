@@ -4,7 +4,7 @@ import React from 'react'
 function SearchBar() {
   return (
     <>
-    <div className=" flex items-center justify-center" style={{padding:"100px"}}>
+    <div className=" flex items-center justify-center animate-pulse" style={{padding:"100px"}}>
 
       <div className="flex rounded-full bg-slate-950 px-2 w-400px " style={{border:"solid 2px rgb(8,184,247)",width:"800px",backgroundColor:"rgb(12,5,51)"}}>
        

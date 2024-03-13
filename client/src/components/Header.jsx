@@ -42,7 +42,12 @@ const Header = ()=> {
           style={{
             backgroundImage:
 
-              "url(https://th.bing.com/th/id/OIP.u8u-1yyEK9xIZrsesPpbDwHaE8?rs=1&pid=ImgDetMain)"
+              "url(https://media.inmobalia.com/imgV1/B98Le8~d7M9k3Df3qscTskhNvqVcJOanYA280Ct8D7le~9hNJxZ8cAqdhroAPJhOg4XIgwDMIb~zRjjTz_5h4kgRTZG~XwvmuYoamq1p7Uj_E_IzE_n3~b02ZSo3idTnhHMsvBHpcJLd~me4G2faTF_4rCDOy5dpGG1M06P8IOp~.jpg)",
+              backgroundRepeat:"no-repeat",
+              backgroundSize:"cover",
+              width:"100%",
+              height:"100%"
+              
 
                }}
         >
