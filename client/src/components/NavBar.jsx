@@ -10,7 +10,7 @@ function NavBar() {
     <nav className="bg-slate-950 shadow-lg p-5">
       <div className="md:flex items-center justify-between py-2 px-8 md:px-12">
         <div className="flex justify-between items-center">
-          <div className="text-2xl font-bold text-slate-50	 md:text-3xl">
+          <div className="text-2xl font-bold text-slate-50	 md:text-3xl animate-bounce">
             <a href="/">Solidity</a>
           </div>
           <div className="md:hidden">
