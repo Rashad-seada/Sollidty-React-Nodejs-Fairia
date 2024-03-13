@@ -36,7 +36,7 @@ function NavBar() {
             Explore Tender
           </a>
           <a
-            href="/CreateTunder"
+            href="/CreateTender"
             className="text-slate-50 rounded hover: hover:text-sky-400 hover:font-medium py-2 px-2 md:mx-2"
           >
             Create Tender

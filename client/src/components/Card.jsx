@@ -7,7 +7,7 @@ const Card = (card) => {
 
         <div
           className="relative mx-4 mt-4 h-96 overflow-hidden rounded-xl   bg-slate-950 bg-clip-border "
-          style={{height: "300px",  border:"solid 2px blue"}}>
+          style={{height: "300px"}}>
           <img
             src="https://freedesignfile.com/upload/2016/06/Simple-blueprint-building-vectors-design-05.jpg"
             className="h-20px w-20px object-cover"

@@ -1,6 +1,6 @@
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-function CreateTunder() {
+function CreateTender() {
   return (
     <>
       <NavBar  />
@@ -98,10 +98,9 @@ function CreateTunder() {
           </div>
         </div>
       </div>
-     
       <Footer />
     </>
   );
 }
 
-export default CreateTunder;
+export default CreateTender;

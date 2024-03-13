@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-import CreateTunder from "./pages/CreateTunder";
+import CreateTender from "./pages/CreateTender";
 import ExploreTender from "./pages/ExploreTender";
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/About";
@@ -14,8 +14,9 @@ const App = () => {
 
     <div className="App">
       <Routes>
+
         <Route path="/" element={<Home />} />
-        <Route path="/CreateTunder" element={<CreateTunder />} />
+        <Route path="/CreateTender" element={<CreateTender  />} />
         <Route path="/ExploreTender" element={<ExploreTender />} />
         <Route Path="/About" element={<About />} />
       </Routes>
