@@ -76,7 +76,6 @@ const TenderAppProvider = ({ children }) => {
 
   useEffect( () => {
     checkIfTheWalletIsConnected();
-    getAllTenders();
   }, []);
 
   return (

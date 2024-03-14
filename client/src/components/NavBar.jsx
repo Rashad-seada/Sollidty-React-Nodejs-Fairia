@@ -1,9 +1,11 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react'
-// eslint-disable-next-line no-unused-vars
+import React, { useContext } from "react";// eslint-disable-next-line no-unused-vars
 import ReactDOM from 'react-dom/client'
+import {TenderAppContext} from"../context/TenderAppContext"
 
 function NavBar() {
+
+  const { connectWallet,currentAccount } = useContext(TenderAppContext);
 
   return (
 
@@ -47,6 +49,14 @@ function NavBar() {
           >
             About
           </a>
+          {currentAccount =="" ?  <button
+            onClick={connectWallet()}
+            className="text-slate-50 rounded-3xl hover: hover:text-sky-400 hover:font-medium  hover:bg-slate-900 py-2 px-2 md:mx-2"
+          style={{border:"solid .5px white" }}
+          >
+            Connect Wallet
+          </button> :null }
+         
         </div>
       </div>
     </nav>
