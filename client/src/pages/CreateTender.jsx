@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { useState } from "react";
+import NavBarV2 from "../components/NavBarV2";
 
 function CreateTender() {
 
@@ -66,7 +67,7 @@ function CreateTender() {
   return (
 
     <React.Fragment>
-      <NavBar />
+      <NavBarV2 />
       <div className="bg-slate-950  text-sky-400 flex min-h-screen w-80% flex-col items-center pt-16  sm:justify-center sm:pt-0">
         <a href="#">
           <div className="text-foreground font-semibold text-2xl tracking-tighter mx-auto flex items-center gap-2">
@@ -86,10 +87,9 @@ function CreateTender() {
                 />
               </svg>
             </div>
-            <div className="text-slate-50 animate-pulse">
-              Create
-              <span className="text-sky-400"> Tender</span>
-            </div>
+            <div style={{fontSize:"80px"}}>
+          <p className="bg-slate-950 font-semibold flex justify-center py-20 text-cyan-50"> Create<span className="text-sky-400 px-3">Tender</span> </p>
+        </div>
           </div>
         </a>
         <div className="relative mt-12 pb-20 w-full max-w-4xl sm:mt-10 ">
@@ -292,7 +292,7 @@ function CreateTender() {
                   // onClick= {
 
                   // }
-                    className="bg-sky-600  text-slate-100 inline-flex items-center justify-center rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:ring hover:ring-white h-10 px-4 py-2 duration-200"
+                    className="bg-ter  text-black inline-flex items-center justify-center rounded-3xl text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:ring hover:ring-white h-10 px-4 py-2 duration-200"
                     href="/"
                   >
                     Create A New Tender

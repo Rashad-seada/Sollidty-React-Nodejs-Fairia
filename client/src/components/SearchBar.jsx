@@ -4,46 +4,21 @@ import React from 'react'
 function SearchBar() {
   return (
     <>
-    <div className=" flex items-center justify-center animate-pulse" style={{padding:"100px"}}>
+    
+      <form class="max-w-md mx-auto bg-primary py-20">   
+          <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+          <div class="relative">
+              <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                  <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                  </svg>
+              </div>
+              <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-3xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-primary dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
+              <button type="submit" class="text-black absolute end-2.5 bottom-2.5 bg-primary hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl text-sm px-4 py-2 dark:bg-ter dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+          </div>
+      </form>
 
-      <div className="flex rounded-full bg-slate-950 px-2 w-400px " style={{border:"solid 2px rgb(8,184,247)",width:"800px",backgroundColor:"rgb(12,5,51)"}}>
-       
-        <input
-          type="text"
-          className="w-full bg-slate-950 flex rounded-lg pl-2 text-sky-100 outline-0"
-          placeholder="Search Of Tunder"
-          style={{backgroundColor:"rgb(12,5,51)"}}
-        />
-        <button type="submit" className="relative p-2 bg-[#0d1829] rounded-full">
-
-          <svg
-            width="30px"
-            height="30px"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="SVGRepo_bgCarrier" strokeWidth={0} />
-            <g
-              id="SVGRepo_tracerCarrier"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <g id="SVGRepo_iconCarrier">
-              {" "}
-              <path
-                d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                stroke="#999"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />{" "}
-            </g>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </>
+    </>
   
   )
 }

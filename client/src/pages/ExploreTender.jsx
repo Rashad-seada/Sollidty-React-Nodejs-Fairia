@@ -4,14 +4,15 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
 import SearchBar from "../components/SearchBar";
+import NavBarV2 from "../components/NavBarV2";
 function ExploreTender() {
   return (
     <div className="bg-slate-950">
 
-      <NavBar />
+      <NavBarV2 />
 
       <div style={{fontSize:"80px"}}>
-          <p className="bg-slate-950 font-semibold flex justify-center text-cyan-50"> Explore<span className="text-sky-400 px-3">Tender</span> </p>
+          <p className="bg-slate-950 font-semibold flex justify-center text-cyan-50 py-10"> Explore<span className="text-sky-400 px-3">Tender</span> </p>
         </div>
 
 
