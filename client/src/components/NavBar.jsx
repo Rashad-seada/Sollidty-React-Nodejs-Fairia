@@ -56,7 +56,7 @@ function NavBar() {
           >
             Connect Wallet
           </button> :null }
-         
+
         </div>
       </div>
     </nav>
