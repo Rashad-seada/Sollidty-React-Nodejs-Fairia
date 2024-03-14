@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 
@@ -12,17 +10,9 @@ const { ethereum } = window;
 const getEthereumContract = () => {
   const provider = new ethers.providers.Web3Provider(ethereum);
   const signer = provider.getSigner();
-  const tenderAppContract = new ethers.Contract(
-    contractAddress,
-    contractABI,
-    signer
-  );
+  const transactionsContract = new ethers.Contract(contractAddress, contractABI, signer);
 
-  console.log({
-    provider,
-    signer,
-    tenderAppContract,
-  });
+  return transactionsContract;
 };
 
 const TenderAppProvider = ({ children }) => {
@@ -36,7 +26,7 @@ const TenderAppProvider = ({ children }) => {
     });
   };
 
-  const connectWallet = async () => {
+  const  connectWallet = async () => {
     try {
       if (!ethereum) return alert("Please install metamask");
       const accounts = await ethereum.request({
@@ -48,23 +38,45 @@ const TenderAppProvider = ({ children }) => {
     }
   };
 
-  // const getAllTenders = async ()=> {
-  //     if (ethereum) {
-  //         const tenderAppContract = getEthereumContract();
+  const getAllTenders = async ()=> {
+      if (ethereum) {
+          const tenderAppContract = getEthereumContract();
 
-  //         const allTenders = await tenderAppContract.getTenders()
-  //         .then((tenders) => {
-  //             setAllTenders(tenders);
-  //         }).catch((error)=> {
-  //             throw new Error(error.message)
-  //         });
-  //     }
+          const allTenders = await tenderAppContract.getTenders()
+          .then((tenders) => {
+              setAllTenders(tenders);
+
+          }).catch(async (error)=> {
+            const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
+
+            alert(errorMessage)
+            throw new Error(errorData)
+
+          });
+      }
+  }
+
+  // const createTender = async ()=> {
+  //   if (ethereum) {
+  //     const tenderAppContract = getEthereumContract();
+
+  //     const allTenders = await tenderAppContract.getTenders()
+  //     .then((tenders) => {
+  //         setAllTenders(tenders);
+
+  //     }).catch(async (error)=> {
+  //       const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
+
+  //       alert(errorMessage)
+  //       throw new Error(errorData)
+
+  //     });
+  // }
   // }
 
-  useEffect(() => {
+  useEffect( () => {
     checkIfTheWalletIsConnected();
-    //getAllTenders();
-    // console.log(ethereum);
+    getAllTenders();
   }, []);
 
   return (
@@ -75,4 +87,3 @@ const TenderAppProvider = ({ children }) => {
 };
 
 export default TenderAppProvider;
->>>>>>> 718be9c2773d848ff941bf1adec3ae93c6095b3b
