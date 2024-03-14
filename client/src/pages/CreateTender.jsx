@@ -15,6 +15,15 @@ function CreateTender() {
   const [EstimatedProgect, setEstimatedProgect] = useState("");
   const [KeyWord, setKeyWord] = useState("");
 
+  // async function onSubmit(){
+  // try {
+  // await function(From,Title,Description,BidBond,prequalification,ContractSign,EstimatedProgect,KeyWord){
+  // console.log("first")
+  // }catch(error) {
+  // console.log("first")
+  // }
+  // }
+
   function handelFormValue(event) {
     setFrom(event.target.value);
     console.log(event.target.value);
@@ -52,9 +61,10 @@ function CreateTender() {
     console.log(event.target.value);
   }
 
- 
+
 
   return (
+
     <React.Fragment>
       <NavBar />
       <div className="bg-slate-950  text-sky-400 flex min-h-screen w-80% flex-col items-center pt-16  sm:justify-center sm:pt-0">
@@ -279,6 +289,9 @@ function CreateTender() {
 
                 <div className="mt-4 pt-10 flex items-center justify-around  gap-x-2 animate-pulse">
                   <a
+                  // onClick= {
+
+                  // }
                     className="bg-sky-600  text-slate-100 inline-flex items-center justify-center rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:ring hover:ring-white h-10 px-4 py-2 duration-200"
                     href="/"
                   >

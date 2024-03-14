@@ -1,12 +1,10 @@
-import NavBar from "./NavBar";
 const Header = ()=> {
 
     return (
-        <>
-  {/* component */}
+       
   <div className="w-full">
     
-    <div className="flex bg-slate-950" style={{ height: 600 }}>
+    <div className="flex bg-slate-950" style={{ height: 700 }}>
       <div className="flex items-center text-center lg:text-left px-8 md:px-12 lg:w-1/2">
         <div>
           <p className="text-7xl font-semibold text-slate-50 pb-5">
@@ -59,7 +57,7 @@ const Header = ()=> {
     </div>
   </div>
   
-</>
+
 
     );
 

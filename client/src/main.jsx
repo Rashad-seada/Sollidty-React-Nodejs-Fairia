@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import "./input.css";
-import TenderAppProvider from "./context/TenderAppContext.jsx";
+import TenderAppProvider from "./context/TenderAppContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

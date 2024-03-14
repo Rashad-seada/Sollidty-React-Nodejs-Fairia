@@ -1,5 +1,8 @@
 const Card = (card) => {
+
+
   return (
+
     <div
       className="  relative flex w-96 flex-col rounded-2xl bg-slate-950   shadow-md text-slate-50
       transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none "
@@ -39,3 +42,4 @@ const Card = (card) => {
 };
 
 export default Card;
+
