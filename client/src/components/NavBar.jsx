@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useContext } from "react";// eslint-disable-next-line no-unused-vars
+import React, { useContext, useState } from "react";// eslint-disable-next-line no-unused-vars
 import ReactDOM from 'react-dom/client'
 import {TenderAppContext} from"../context/TenderAppContext"
 
 function NavBar() {
 
-  const { connectWallet,currentAccount } = useContext(TenderAppContext);
+  const { connectWallet } = useContext(TenderAppContext);
 
   return (
 
@@ -30,32 +30,43 @@ function NavBar() {
             </button>
           </div>
         </div>
+
         <div className="d-flex flex-col md:flex-row hidden md:block -mx-2">
+        <a
+            href="/"
+            className="text-sky-500 rounded-xl hover: hover:text-sky-400 hover:font-medium py-2 px-2 md:mx-2"
+          >
+            Home
+          </a>
+
           <a
             href="/ExploreTender"
             className="text-slate-50 rounded hover: hover:text-sky-400 hover:font-medium py-2 px-2 md:mx-2"
           >
             Explore Tender
           </a>
+
           <a
             href="/CreateTender"
             className="text-slate-50 rounded hover: hover:text-sky-400 hover:font-medium py-2 px-2 md:mx-2"
           >
             Create Tender
           </a>
+
           <a
             href="#"
             className="text-slate-50 rounded hover: hover:text-sky-400 hover:font-medium py-2 px-2 md:mx-2"
           >
             About
           </a>
-          {currentAccount =="" ?  <button
-            onClick={connectWallet()}
-            className="text-slate-50 rounded-3xl hover: hover:text-sky-400 hover:font-medium  hover:bg-slate-900 py-2 px-2 md:mx-2"
-          style={{border:"solid .5px white" }}
+
+          {connectWallet  ? <button
+            onClick={()=>connectWallet()}
+            className="text-slate-50 rounded-2xl hover: hover:text-sky-400 hover:font-medium py-2 px-2 md:mx-2"
+          style={{border:"solid .5px white"}}
           >
             Connect Wallet
-          </button> :null }
+          </button> : null }
 
         </div>
       </div>
