@@ -1,17 +1,10 @@
 // eslint-disable-next-line no-unused-vars
-<<<<<<< HEAD
-import React, { useContext, useState } from "react";// eslint-disable-next-line no-unused-vars
-=======
-import React, { useContext ,  useEffect, useState } from "react";// eslint-disable-next-line no-unused-vars
->>>>>>> 06f95b65f9c1a84fd5e3bd2c0e3e593573febf47
+import React, { useContext, useState,useEffect } from "react";// eslint-disable-next-line no-unused-vars
 import ReactDOM from 'react-dom/client'
 import {TenderAppContext} from"../context/TenderAppContext"
 
 function NavBar() {
 
-<<<<<<< HEAD
-  const { connectWallet } = useContext(TenderAppContext);
-=======
   const {
     connectWallet,
     currentAccount 
@@ -21,7 +14,6 @@ function NavBar() {
   useEffect( () => {
     console.log(currentAccount)
   }, []);
->>>>>>> 06f95b65f9c1a84fd5e3bd2c0e3e593573febf47
 
   return (
 
@@ -75,24 +67,11 @@ function NavBar() {
           >
             About
           </a>
-<<<<<<< HEAD
 
           {connectWallet  ? <button
             onClick={()=>connectWallet()}
             className="text-slate-50 rounded-2xl hover: hover:text-sky-400 hover:font-medium py-2 px-2 md:mx-2"
           style={{border:"solid .5px white"}}
-=======
-          {!currentAccount ?  <button
-            onClick = {
-              () =>{
-                console.log(currentAccount)
-
-                connectWallet()
-              }
-            }
-            className ="text-slate-50 rounded-3xl hover: hover:text-sky-400 hover:font-medium  hover:bg-slate-900 py-2 px-2 md:mx-2"
-          style={{border:"solid .5px white" }}
->>>>>>> 06f95b65f9c1a84fd5e3bd2c0e3e593573febf47
           >
             Connect Wallet
           </button> : null }
