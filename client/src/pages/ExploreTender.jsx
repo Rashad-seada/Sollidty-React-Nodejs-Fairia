@@ -8,11 +8,8 @@ import NavBarV2 from "../components/NavBarV2";
 import {TenderAppContext} from"../context/TenderAppContext"
 
 function ExploreTender() {
-
-  const [tenders, setTenders] = useState([]);
-
   const {
-    getAllTenders
+    getAllTenders,tenders,setTenders
   } = useContext(TenderAppContext);
 
   useEffect( () => {
@@ -25,7 +22,6 @@ function ExploreTender() {
 
       alert(errorMessage)   
     })
-    
   }, []);
 
 
@@ -50,7 +46,7 @@ function ExploreTender() {
         >
 
         {tenders.map((tender, index) => (
-              <Card title= {tender.title} description = {tender.description} />
+              <Card  key={index} title= {tender.title} description = {tender.description} />
         ))}
      
 

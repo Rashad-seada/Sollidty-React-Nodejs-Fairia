@@ -15,9 +15,10 @@ const getEthereumContract = () => {
 
 const TenderAppProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState("");
-  const [ allTenders ,setAllTenders] = useState([])
+  const [tenders, setTenders] = useState([]);
 
   const checkIfTheWalletIsConnected = async () => {
+    
     if (!ethereum) return alert("Please install metamask");
     const accounts = await ethereum.request({
       method: "eth_accounts",
@@ -50,11 +51,13 @@ const TenderAppProvider = ({ children }) => {
   }
 
   const searchTenders = async (search)=> {
+
     if (ethereum) {
+
         const tenderAppContract = getEthereumContract();
 
         return await tenderAppContract.searchTenders(search)
-        
+
     }
 }
 
@@ -88,11 +91,12 @@ const TenderAppProvider = ({ children }) => {
 
   useEffect( () => {
     checkIfTheWalletIsConnected();
-    
+
   }, []);
 
   return (
-    <TenderAppContext.Provider value={{ connectWallet , currentAccount , createTender , getAllTenders , searchTenders }}>
+    <TenderAppContext.Provider value={{ connectWallet , currentAccount , createTender , getAllTenders , searchTenders ,  tenders, setTenders}}
+    >
       {children}
     </TenderAppContext.Provider>
   );
