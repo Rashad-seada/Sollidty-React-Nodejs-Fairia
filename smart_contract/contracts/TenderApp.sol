@@ -1,4 +1,3 @@
-// SPDX-License-Identifier: UNLICENSED 
 pragma solidity 0.8.24;
 
 contract TenderApp {
@@ -7,11 +6,15 @@ contract TenderApp {
 
     struct Tender {
         address auther;
+        string from;
         string title;
         string description;
+        string bidBond;
+        uint256 prequalificationDeadline;
+        uint256 bidSubmissionDeadline;
+        uint256 contractSignDeadline;
+        uint256 estimatedProjectCost;
         string keyword;
-        uint256 bidBond;
-        uint256 estimatedCost;
         uint256 timestamp;
     }
 
@@ -21,7 +24,6 @@ contract TenderApp {
     constructor() {
         latestIndex = 0;
     }
-
 
     function stringContains(string memory str, string memory substr) internal pure returns (bool) {
         bytes memory strBytes = bytes(str);
@@ -41,7 +43,7 @@ contract TenderApp {
     }
 
     function getTenders() public view returns (Tender[10] memory){
-       require(tenders.length > 0, "No tenders available");
+        require(tenders.length > 0, "No tenders available");
 
         // Create an array to store the latest tenders
         Tender[10] memory latestTenders;
@@ -54,7 +56,6 @@ contract TenderApp {
         return latestTenders;
     }
 
-
     function searchTenders(string memory query) public view returns (Tender[] memory){
         require(bytes(query).length > 0, "Empty search query");
 
@@ -66,9 +67,7 @@ contract TenderApp {
         // Iterate over the list of tenders and check if the query matches any field
         for (uint256 i = 0; i < tenders.length; i++) {
             Tender memory currentTender = tenders[i];
-            if (stringContains(currentTender.title, query) ||
-                stringContains(currentTender.description, query) ||
-                stringContains(currentTender.keyword, query)) {
+            if (stringContains(currentTender.title, query) || stringContains(currentTender.keyword, query)) {
                 // Add the matching tender to the array
                 matchingTenders[count] = currentTender;
                 count++;
@@ -83,16 +82,31 @@ contract TenderApp {
         return matchingTenders;
     }
 
-
     function createTender(
+        string memory from,
         string memory title,
         string memory description,
-        string memory keyword,
-        uint256 bidBond,
-        uint256 estimatedCost
+        string memory bidBond,
+        uint256 prequalificationDeadline, 
+        uint256 bidSubmissionDeadline, 
+        uint256 contractSignDeadline, 
+        uint256 estimatedProjectCost, 
+        string memory keyword
     ) public {
 
-        tenders.push(Tender(msg.sender, title, description, keyword, bidBond, estimatedCost,block.timestamp));
+        tenders.push(Tender(
+            msg.sender,
+            from,
+            title,
+            description,
+            bidBond,
+            prequalificationDeadline,
+            bidSubmissionDeadline,
+            contractSignDeadline,
+            estimatedProjectCost,
+            keyword,
+            block.timestamp
+        ));
         emit Announce();
         // Update the latest index
         latestIndex = tenders.length - 1;
