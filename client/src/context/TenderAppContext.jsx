@@ -44,44 +44,55 @@ const TenderAppProvider = ({ children }) => {
       if (ethereum) {
           const tenderAppContract = getEthereumContract();
 
-          const allTenders = await tenderAppContract.getTenders()
-          .then((tenders) => {
-              setAllTenders(tenders);
-
-          }).catch(async (error)=> {
-            const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
-
-            alert(errorMessage)
-            throw new Error(errorMessage)
-
-          });
+          return await tenderAppContract.getTenders()
+          
       }
   }
 
-  // const createTender = async ()=> {
-  //   if (ethereum) {
-  //     const tenderAppContract = getEthereumContract();
+  const searchTenders = async (search)=> {
+    if (ethereum) {
+        const tenderAppContract = getEthereumContract();
 
-  //     const allTenders = await tenderAppContract.getTenders()
-  //     .then((tenders) => {
-  //         setAllTenders(tenders);
+        return await tenderAppContract.searchTenders(search)
+        
+    }
+}
 
-  //     }).catch(async (error)=> {
-  //       const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
+  const createTender = async (from, title, description, bidBond, prequalificationDeadline, bidSubmissionDeadline, contractSignDeadline, estimatedProjectCost, keyword)=> {
+    if (ethereum) {
+      const tenderAppContract = getEthereumContract();
 
-  //       alert(errorMessage)
-  //       throw new Error(errorData)
+      await tenderAppContract.createTender(
+        from,
+        title,
+        description,
+        bidBond,
+        prequalificationDeadline,
+        bidSubmissionDeadline,
+        contractSignDeadline,
+        estimatedProjectCost,
+        keyword,
+      ).then((tenders) => {
 
-  //     });
-  // }
-  // }
+
+        
+      }).catch(async (error)=> {
+        const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
+
+        alert(errorMessage)
+        throw new Error(errorData)
+
+      });
+  }
+  }
 
   useEffect( () => {
     checkIfTheWalletIsConnected();
+    
   }, []);
 
   return (
-    <TenderAppContext.Provider value={{ connectWallet , currentAccount  }}>
+    <TenderAppContext.Provider value={{ connectWallet , currentAccount , createTender , getAllTenders , searchTenders }}>
       {children}
     </TenderAppContext.Provider>
   );

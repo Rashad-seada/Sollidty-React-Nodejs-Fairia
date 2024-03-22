@@ -1,11 +1,35 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useContext ,  useEffect, useState } from "react";// eslint-disable-next-line no-unused-vars
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
 import SearchBar from "../components/SearchBar";
 import NavBarV2 from "../components/NavBarV2";
+import {TenderAppContext} from"../context/TenderAppContext"
+
 function ExploreTender() {
+
+  const [tenders, setTenders] = useState([]);
+
+  const {
+    getAllTenders
+  } = useContext(TenderAppContext);
+
+  useEffect( () => {
+    getAllTenders()
+    .then((tenders)=> {
+      setTenders(tenders)
+      console.log(tenders)
+    }).catch((error)=> {
+      const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
+
+      alert(errorMessage)   
+    })
+    
+  }, []);
+
+
+
   return (
     <div className="bg-slate-950">
 
@@ -24,15 +48,11 @@ function ExploreTender() {
 
           style={{ padding: "10px",width:"80%",marginLeft:"10%"}}
         >
-          <Card title="First" info="Ibrahim  shoeib" />
-          <Card title="second" info="Rashad"  />
-          <Card title="third" info="Ahmed" />
-          <Card title="First" info="Ibrahim  shoeib" />
-          <Card title="second" info="Rashad" className="p-10" />
-          <Card title="third" info="Ahmed" />
-          <Card title="First" info="Ibrahim  shoeib" />
-          <Card title="second" info="Rashad" className="p-10" />
-          <Card title="third" info="Ahmed" />
+
+        {tenders.map((tender, index) => (
+              <Card title= {tender.title} description = {tender.description} />
+        ))}
+     
 
       </div>
       <Footer />

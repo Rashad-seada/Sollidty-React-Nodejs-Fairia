@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext ,  useEffect, useState } from "react";// eslint-disable-next-line no-unused-vars
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import { useState } from "react";
 import NavBarV2 from "../components/NavBarV2";
+import {TenderAppContext} from"../context/TenderAppContext"
+import { ethers } from "ethers" ;
 
 function CreateTender() {
 
@@ -16,14 +17,40 @@ function CreateTender() {
   const [EstimatedProgect, setEstimatedProgect] = useState("");
   const [KeyWord, setKeyWord] = useState("");
 
-  // async function onSubmit(){
-  // try {
-  // await function(From,Title,Description,BidBond,prequalification,ContractSign,EstimatedProgect,KeyWord){
-  // console.log("first")
-  // }catch(error) {
-  // console.log("first")
-  // }
-  // }
+  const {
+    createTender,
+  } = useContext(TenderAppContext);
+
+  
+  //ethers.utils.formatBytes32String("Another Bid Bond")
+
+  async function onSubmit(){
+    try {
+      // Convert strings to numbers where necessary
+      const prequalificationDeadline = ethers.utils.formatBytes32String(prequalification);
+      const bidSubmissionDeadline = ethers.utils.formatBytes32String(BidSubmission);
+      const contractSignDeadline = ethers.utils.formatBytes32String(ContractSign);
+      const estimatedProjectCost = ethers.utils.formatBytes32String(EstimatedProgect);
+  
+      // Call createTender function with the converted parameters
+      await createTender(
+        From,
+        Title,
+        Description,
+        BidBond,
+        prequalificationDeadline,
+        bidSubmissionDeadline,
+        contractSignDeadline,
+        estimatedProjectCost,
+        KeyWord
+      );
+    } catch(error) {
+      const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
+
+      alert(errorMessage)   
+     }
+  }
+  
 
   function handelFormValue(event) {
     setFrom(event.target.value);
@@ -289,11 +316,9 @@ function CreateTender() {
 
                 <div className="mt-4 pt-10 flex items-center justify-around  gap-x-2 animate-pulse">
                   <a
-                  // onClick= {
-
-                  // }
+                    onClick={ ()=> onSubmit() }
                     className="bg-ter  text-black inline-flex items-center justify-center rounded-3xl text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:ring hover:ring-white h-10 px-4 py-2 duration-200"
-                    href="/"
+                    //href="/"
                   >
                     Create A New Tender
                   </a>
