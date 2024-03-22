@@ -13,7 +13,6 @@ import TenderPage from "./pages/TenderPage";
 const App = () => {
 
   return (
-
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
@@ -22,7 +21,6 @@ const App = () => {
         <Route path="/TenderPage" element={<TenderPage />} />
         <Route Path="/About" element={<About />} />
       </Routes>
-
     </div>
   );
 };

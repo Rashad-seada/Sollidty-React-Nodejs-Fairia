@@ -2,6 +2,7 @@
 import React from 'react'
 import Footer from '../components/Footer'
 import NavBar from '../components/NavBar'
+import NavBarV2 from '../components/NavBarV2'
 
 function TenderPage(
     Form,Title,Description,BidBond,prequalificationDeadline,
@@ -11,7 +12,7 @@ function TenderPage(
       {
   return (
     <>
-    <NavBar />
+    <NavBarV2 />
     
     <div className="min-w-screen min-h-screen bg-slate-950 flex items-center p-5 lg:p-10 overflow-hidden relative">
       <div className="w-full max-w-6xl rounded bg-secondary shadow-xl p-10 lg:p-20 mx-auto text-sky-400 relative md:text-left">
