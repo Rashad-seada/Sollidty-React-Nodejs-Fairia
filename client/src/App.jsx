@@ -3,7 +3,6 @@ import CreateTender from "./pages/CreateTender";
 import ExploreTender from "./pages/ExploreTender";
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/About";
-
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 // eslint-disable-next-line no-unused-vars
@@ -24,4 +23,5 @@ const App = () => {
     </div>
   );
 };
+
 export default App;
