@@ -24,7 +24,7 @@ function SearchBar() {
 
   return (
     <>
-      <form   
+      <form
       onSubmit={e => e.preventDefault()}
        className="max-w-md mx-auto bg-primary py-20">
 
