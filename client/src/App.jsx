@@ -8,7 +8,8 @@ import React from "react";
 // eslint-disable-next-line no-unused-vars
 import ReactDOM from "react-dom/client";
 import TenderPage from "./pages/TenderPage";
-
+import MyTender from "./pages/MyTender";
+import MyOffers from "./pages/MyOffers";
 const App = () => {
 
   return (
@@ -19,6 +20,8 @@ const App = () => {
         <Route path="/ExploreTender" element={<ExploreTender />} />
         <Route path="/TenderPage" element={<TenderPage />} />
         <Route Path="/About" element={<About />} />
+        <Route path="/MyTender" element={ <MyTender />} />
+        <Route path="/MyOffers" element={ <MyOffers />} />
       </Routes>
     </div>
   );

@@ -95,7 +95,9 @@ function CreateTender() {
 
     <React.Fragment>
       <NavBarV2 />
-      <div className="bg-slate-950  text-sky-400 flex min-h-screen w-80% flex-col items-center pt-16  sm:justify-center sm:pt-0">
+      <div 
+      onSubmit={e => e.preventDefault()}
+      className="bg-slate-950  text-sky-400 flex min-h-screen w-80% flex-col items-center pt-16  sm:justify-center sm:pt-0">
         <a href="#">
           <div className="text-foreground font-semibold text-2xl tracking-tighter mx-auto flex items-center gap-2">
             <div className="text-slate-50 ">
@@ -315,12 +317,12 @@ function CreateTender() {
                 </div>
 
                 <div className="mt-4 pt-10 flex items-center justify-around  gap-x-2 animate-pulse">
-                  <a
+                  <button
                     onClick={ ()=> onSubmit() }
                     className="bg-ter  text-black inline-flex items-center justify-center rounded-3xl text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:ring hover:ring-white h-10 px-4 py-2 duration-200"
                   >
                     Create A New Tender
-                  </a>
+                  </button>
                 </div>
               </form>
             </div>
