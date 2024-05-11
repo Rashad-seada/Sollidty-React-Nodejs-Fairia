@@ -15,7 +15,11 @@ const getEthereumContract = () => {
 
 const TenderAppProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState("");
+
   const [tenders, setTenders] = useState([]);
+  const [tendersByAuther, setTendersByAuther] = useState([]);
+  const [tendersByApplicant, setTendersByApplicant] = useState([]);
+  const [tender, setTender] = useState();
 
   const checkIfTheWalletIsConnected = async () => {
     
@@ -89,13 +93,140 @@ const TenderAppProvider = ({ children }) => {
   }
   }
 
+  const getTenderById = async (id)=> {
+
+    if (ethereum) {
+
+        const tenderAppContract = getEthereumContract();
+
+        return await tenderAppContract.getTenderById(id).then((tenders) => {
+
+
+        
+        }).catch(async (error)=> {
+          const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
+  
+          alert(errorMessage)
+          throw new Error(errorData)
+  
+        });
+
+    }
+  }
+
+  const applyToTender = async (tenderIndex,  form,  title,  description)=> {
+
+    if (ethereum) {
+
+        const tenderAppContract = getEthereumContract();
+
+        return await tenderAppContract.applyToTender(id).then((tenders) => {
+
+
+        
+        }).catch(async (error)=> {
+          const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
+  
+          alert(errorMessage)
+          throw new Error(errorData)
+  
+        });
+
+    }
+  }
+
+  const getTendersByAuthor = async ()=> {
+
+    if (ethereum) {
+
+        const tenderAppContract = getEthereumContract();
+
+        return await tenderAppContract.getTendersByAuthor().then((tenders) => {
+
+
+        
+        }).catch(async (error)=> {
+          const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
+  
+          alert(errorMessage)
+          throw new Error(errorData)
+  
+        });
+
+    }
+  }
+
+  const getTendersByApplicant = async ()=> {
+
+    if (ethereum) {
+
+        const tenderAppContract = getEthereumContract();
+
+        return await tenderAppContract.getTendersByApplicant().then((tenders) => {
+
+
+        
+        }).catch(async (error)=> {
+          const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
+  
+          alert(errorMessage)
+          throw new Error(errorData)
+  
+        });
+
+    }
+  }
+
+  const getApplicantsByTender = async (tenderId)=> {
+
+    if (ethereum) {
+
+        const tenderAppContract = getEthereumContract();
+
+        return await tenderAppContract.getApplicantsByTender(tenderId).then((tenders) => {
+
+
+        
+        }).catch(async (error)=> {
+          const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
+  
+          alert(errorMessage)
+          throw new Error(errorData)
+  
+        });
+
+    }
+  }
+
   useEffect( () => {
     checkIfTheWalletIsConnected();
 
   }, []);
 
   return (
-    <TenderAppContext.Provider value={{ connectWallet , currentAccount , createTender , getAllTenders , searchTenders ,  tenders, setTenders}}
+    <TenderAppContext.Provider value={{
+          connectWallet ,
+          currentAccount ,
+          createTender , 
+          getAllTenders , 
+          searchTenders , 
+          tenders, 
+          setTenders,
+          getTenderById,
+          applyToTender,
+          getTendersByAuthor,
+          getTendersByApplicant,
+          getApplicantsByTender,
+
+          tendersByAuther,
+          setTendersByAuther,
+
+          tendersByApplicant,
+          setTendersByApplicant,
+
+          tender,
+          setTender
+        }}
     >
       {children}
     </TenderAppContext.Provider>
