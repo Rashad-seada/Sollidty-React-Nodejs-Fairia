@@ -1,10 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Link, useParams } from 'react-router-dom';
-function SingleCard() {
-    // name, title,price
+import {TenderAppContext} from"../context/TenderAppContext"
+import { useContext } from "react";
 
-    let { userId } = useParams();
+function SingleCard(props) {
+    // name, title,price
+    const { getTenderById } = useContext(TenderAppContext);
+    let { Id } = useParams();
+    const product = getTenderById(p => p.id === +Id)
     return (
     <>
       <div className="h-screen bg-primary pt-32">
@@ -28,14 +32,12 @@ function SingleCard() {
               </div>
               <div className="md:flex-1 px-4">
                 <h2 className="mb-2 leading-tight tracking-tight font-bold text-gray-200 text-2xl md:text-3xl">
-                  {/* {title}  */} Lorem ipsum, dolor sit, amet consectetur adipisicing elit.
-                  Vitae exercitationem porro saepe ea harum corrupti vero id
-                  
+                  {product.title}  
                 </h2>
                 <p className="text-gray-500 text-sm">
                   By{" "}
                   <a href="#" className="text-indigo-600 hover:underline">
-                    {/* {name} */} Codex Tech Company
+                    {product.name} 
                   </a>
                 </p>
                 <div className="flex items-center space-x-4 my-4">
@@ -45,7 +47,7 @@ function SingleCard() {
                         ETH
                       </span>
                       <span className="font-bold text-white text-3xl">
-                        {/* {price} */} 12
+                        {product.price} 
                       </span>
                     </div>
                   </div>
@@ -56,9 +58,7 @@ function SingleCard() {
                   </div>
                 </div>
                 <p className="text-gray-500">
-                  Lorem ipsum, dolor sit, amet consectetur adipisicing elit.
-                  Vitae exercitationem porro saepe ea harum corrupti vero id
-                  laudantium enim, libero blanditiis expedita cupiditate a est.
+                  {product.description}
                 </p>
                 <div className="flex py-4 ">
                   <div className="relative"></div>
