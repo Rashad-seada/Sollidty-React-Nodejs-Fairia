@@ -16,6 +16,22 @@ describe("TenderApp", function () {
       await expect(tenderApp.createTender("From", "Title", "Description", 100, 100, 200, 300, 400, "Keyword"))
         .to.emit(tenderApp, "Announce");
     });
+
+    it("Should incriment id by 1", async function () {
+
+      for ( let i = 0; i < 10; ++i){
+        tenderApp.createTender("From", "Title", "Description", 100, 100, 200, 300, 400, "Keyword")
+      }
+
+      const tender = await tenderApp.getTenders();
+
+      for ( let i = 0; i < 10; ++i){
+        expect(tender[i].id).to.equal(i);
+        console.log(parseInt(tender[i].id._hex))
+      }
+      
+    });
+  
   
     it("Should create a new Tender", async function () {
       await tenderApp.createTender("From", "Title", "Description", 100, 100, 200, 300, 400, "Keyword");

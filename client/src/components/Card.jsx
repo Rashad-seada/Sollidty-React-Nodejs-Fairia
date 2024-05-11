@@ -5,9 +5,10 @@ import { ethers } from "ethers" ;
 const Card = (props) => {
 
   const id = parseInt(props.id._hex).toString()
-  
+  const bidBond = parseInt(props.bidBond._hex).toString()
 
-  console.log(id)
+
+  console.log(bidBond)
 
   const path = `/MyTender/${id}`
   return (
