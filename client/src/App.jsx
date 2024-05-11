@@ -11,6 +11,7 @@ import TenderPage from "./pages/TenderPage";
 import MyTender from "./pages/MyTender";
 import MyOffers from "./pages/MyOffers";
 import Test from "./pages/Test";
+
 const App = () => {
 
   return (
@@ -21,10 +22,9 @@ const App = () => {
         <Route path="/ExploreTender" element={<ExploreTender />} />
         <Route path="/TenderPage" element={<TenderPage />} />
         <Route Path="/About" element={<About />} />
-        <Route path="/MyTender/:id" element={ <MyTender />} />
+        <Route path="/MyTender" element={ <MyTender />} />
         <Route path="/MyOffers" element={ <MyOffers />} />
         <Route path="/test" element={ <Test />} />
-
       </Routes>
     </div>
   );

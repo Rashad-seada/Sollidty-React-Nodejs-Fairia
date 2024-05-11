@@ -1,10 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import ApplyTender from './ApplyTender'
+import Card from '../components/Card'
 
 function test() {
   return (
-    <ApplyTender />
+    <div>
+        <ApplyTender />
+        <Card />
+    </div>
   )
 }
 

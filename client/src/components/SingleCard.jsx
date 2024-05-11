@@ -1,8 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import { Link, useParams } from 'react-router-dom';
 function SingleCard() {
     // name, title,price
-  return (
+
+    let { userId } = useParams();
+    return (
     <>
       <div className="h-screen bg-primary pt-32">
         <div className="py-6">
@@ -59,11 +62,12 @@ function SingleCard() {
                 </p>
                 <div className="flex py-4 ">
                   <div className="relative"></div>
-                  <button
+                  <Link
+                  to="/Test"
                     type="button"
                     className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-base transition-all duration-200 bg-yellow-300 hover:bg-yellow-300 hover:text-black focus:text-black focus:bg-yellow-300 font-semibold text-primary  rounded-full" role="button">
                     Apply now
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

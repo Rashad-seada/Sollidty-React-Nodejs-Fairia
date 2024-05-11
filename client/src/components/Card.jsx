@@ -27,7 +27,7 @@ const Card = (props) => {
 
       <div className="p-6 pt-0 ">
         <a
-          href="/TenderPage"
+          href="/SingleCard"
           className=" block w-full select-none bg-sky-600 text-sky-50  rounded-lg bg-blue-gray-900/10 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-blue-gray-900  "
           type="button"
 
