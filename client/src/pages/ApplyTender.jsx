@@ -43,7 +43,6 @@ function ApplyTender() {
 
   return (
     <React.Fragment>
-      <NavBarV2 />
       <div
         onSubmit={(e) => e.preventDefault()}
         className="bg-slate-950  text-sky-400 flex min-h-screen w-80% flex-col items-center pt-16  sm:justify-center sm:pt-0"
@@ -83,7 +82,7 @@ function ApplyTender() {
 
               </h3>
               <p className="mt-1.5 text-sm font-medium text-sky-100">
-                Apply Tender
+                Description here
               </p>
             </div>
             <div className="p-6 pt-0">
@@ -160,7 +159,6 @@ function ApplyTender() {
           </div>
         </div>
       </div>
-      <Footer />
     </React.Fragment>
   );
 }

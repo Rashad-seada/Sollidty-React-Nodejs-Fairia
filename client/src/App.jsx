@@ -1,3 +1,4 @@
+
 import Home from "./pages/Home";
 import CreateTender from "./pages/CreateTender";
 import ExploreTender from "./pages/ExploreTender";
@@ -11,8 +12,8 @@ import TenderPage from "./pages/TenderPage";
 import MyTender from "./pages/MyTender";
 import MyOffers from "./pages/MyOffers";
 import Test from "./pages/Test";
+
 const App = () => {
-  
 
   return (
     <div className="App">
@@ -25,7 +26,6 @@ const App = () => {
         <Route path="/MyTender/:id" element={ <MyTender />} />
         <Route path="/MyOffers" element={ <MyOffers />} />
         <Route path="/test" element={ <Test />} />
-
       </Routes>
     </div>
   );
