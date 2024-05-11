@@ -1,3 +1,4 @@
+
 import Home from "./pages/Home";
 import CreateTender from "./pages/CreateTender";
 import ExploreTender from "./pages/ExploreTender";
@@ -13,7 +14,6 @@ import MyOffers from "./pages/MyOffers";
 import Test from "./pages/Test";
 
 const App = () => {
-  
 
   return (
     <div className="App">
