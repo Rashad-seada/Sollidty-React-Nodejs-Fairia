@@ -62,6 +62,13 @@ function NavBar() {
           </a>
 
           <a
+            href="/MyOffers"
+            className="text-slate-50 rounded hover: hover:text-sky-400 hover:font-medium py-2 px-2 md:mx-2"
+          >
+             My Offers
+          </a>
+
+          <a
             href="#"
             className="text-slate-50 rounded hover: hover:text-sky-400 hover:font-medium py-2 px-2 md:mx-2"
           >

@@ -37,6 +37,10 @@ function NavBarV2() {
 
                         <a href="/CreateTender" title="" className="text-base text-white transition-all duration-200 hover:text-opacity-80"> Create Tender </a>
 
+                        <a href="/CreateTender" title="" className="text-base text-white transition-all duration-200 hover:text-opacity-80"> My Offers </a>
+
+                        <a href="/CreateTender" title="" className="text-base text-white transition-all duration-200 hover:text-opacity-80"> My Tenders </a>
+
                         <a href="#" title="" className="text-base text-white transition-all duration-200 hover:text-opacity-80"> About </a>
 
                     </div>

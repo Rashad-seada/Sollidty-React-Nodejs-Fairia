@@ -84,11 +84,11 @@ const TenderAppProvider = ({ children }) => {
 
         
       }).catch(async (error)=> {
+        const errorData = new Error()
         const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
 
         alert(errorMessage)
-        throw new Error(errorData)
-
+        throw errorData
       });
   }
   }
@@ -106,7 +106,7 @@ const TenderAppProvider = ({ children }) => {
           const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
   
           alert(errorMessage)
-          throw new Error(errorData)
+          throw new Error(error)
   
         });
 
