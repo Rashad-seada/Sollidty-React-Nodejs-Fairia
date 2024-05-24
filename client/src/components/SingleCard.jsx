@@ -4,14 +4,12 @@ import { Link, useParams } from 'react-router-dom';
 import {TenderAppContext} from"../context/TenderAppContext"
 import { useContext } from "react";
 
-function SingleCard(props) {
-    // name, title,price
-    const { getTenderById } = useContext(TenderAppContext);
-    let { Id } = useParams();
-    const product = getTenderById(p => p.id === +Id)
+function SingleCard(props) {  // =>  name, title,price
+   
+
     return (
     <>
-      <div className="h-screen bg-primary pt-32">
+<div className="h-screen bg-primary pt-32">
         <div className="py-6">
           {/* ./ Breadcrumbs */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -32,12 +30,12 @@ function SingleCard(props) {
               </div>
               <div className="md:flex-1 px-4">
                 <h2 className="mb-2 leading-tight tracking-tight font-bold text-gray-200 text-2xl md:text-3xl">
-                  {product.title}  
+                  {props.title}  
                 </h2>
                 <p className="text-gray-500 text-sm">
                   By{" "}
                   <a href="#" className="text-indigo-600 hover:underline">
-                    {product.name} 
+                    {props.name} 
                   </a>
                 </p>
                 <div className="flex items-center space-x-4 my-4">
@@ -47,7 +45,7 @@ function SingleCard(props) {
                         ETH
                       </span>
                       <span className="font-bold text-white text-3xl">
-                        {product.price} 
+                        {props.price} 
                       </span>
                     </div>
                   </div>
@@ -58,7 +56,7 @@ function SingleCard(props) {
                   </div>
                 </div>
                 <p className="text-gray-500">
-                  {product.description}
+                  {props.description}
                 </p>
                 <div className="flex py-4 ">
                   <div className="relative"></div>
@@ -73,8 +71,7 @@ function SingleCard(props) {
             </div>
           </div>
         </div>
-\      </div>
-    </>
+\      </div>    </>
   );
 }
 

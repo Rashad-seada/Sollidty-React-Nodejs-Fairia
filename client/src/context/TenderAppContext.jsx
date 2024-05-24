@@ -84,11 +84,11 @@ const TenderAppProvider = ({ children }) => {
 
         
       }).catch(async (error)=> {
+        const errorData = new Error()
         const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
 
         alert(errorMessage)
-        throw new Error(errorData)
-
+        throw errorData
       });
   }
   }
@@ -99,7 +99,16 @@ const TenderAppProvider = ({ children }) => {
 
         const tenderAppContract = getEthereumContract();
 
-        return await tenderAppContract.getTenderById(id)
+         await tenderAppContract.getTenderById(id).then((tenders) => {
+          return tenders
+
+        }).catch(async (error)=> {
+          const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
+  
+          alert(errorMessage)
+          throw new Error(error)
+  
+        });
 
     }
   }
