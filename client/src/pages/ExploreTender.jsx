@@ -46,7 +46,6 @@ function ExploreTender() {
 
         >
 
-
         {tenders.map((tender, index) => (
               <Card  key={index} title= {tender.title} description = {tender.description} id = {tender.id} bidBond = {tender.bidBond}/>
         ))}
