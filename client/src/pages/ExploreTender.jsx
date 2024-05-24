@@ -43,6 +43,7 @@ function ExploreTender() {
           className="flex flex-wrap justify-around w-70% m-21"
 
           style={{ padding: "10px",width:"80%",marginLeft:"10%"}}
+          
         >
 
         {tenders.map((tender, index) => (
