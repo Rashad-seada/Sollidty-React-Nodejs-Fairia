@@ -21,7 +21,6 @@ function CreateTender() {
     createTender,
   } = useContext(TenderAppContext);
 
-
   //ethers.utils.formatBytes32String("Another Bid Bond")
 
   async function onSubmit(){
@@ -47,11 +46,9 @@ function CreateTender() {
     } catch(error) {
       const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
 
-      alert(errorMessage)   
+      alert(errorMessage)
      }
   }
-  
-
   function handelFormValue(event) {
     setFrom(event.target.value);
     console.log(event.target.value);
@@ -88,8 +85,6 @@ function CreateTender() {
     setKeyWord(event.target.value);
     console.log(event.target.value);
   }
-
-
 
   return (
 
