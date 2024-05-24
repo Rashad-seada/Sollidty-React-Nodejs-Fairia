@@ -1,7 +1,13 @@
 import {Link} from "react-router-dom"
 
 const Card = (props) => {
+
+  const id = parseInt(props.id._hex).toString()
   
+
+  console.log(id)
+
+  const path = `/MyTender/${id}`
   return (
     <div className="max-w-sm bg-secondary border-secondary border-solid border-4 rounded-lg mb-20">
     <a href="#">

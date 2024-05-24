@@ -106,7 +106,7 @@ const TenderAppProvider = ({ children }) => {
           const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
   
           alert(errorMessage)
-          throw new Error(error)
+          throw new Error(errorData)
   
         });
 
