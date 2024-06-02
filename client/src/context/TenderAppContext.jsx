@@ -5,7 +5,7 @@ const { ethereum } = window;
 
 export const TenderAppContext = React.createContext();
 
-
+ 
 const getEthereumContract = () => {
   const provider = new ethers.providers.Web3Provider(ethereum);
   const signer = provider.getSigner();
