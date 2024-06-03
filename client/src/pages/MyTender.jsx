@@ -17,7 +17,9 @@ function MyTender() {
   useEffect( () => {
     console.log("id "+ id)
 
-    getTenderById(ethers.utils.formatBytes32String(id))
+    
+
+    getTenderById(ethers.BigNumber.from(id))
     .then((value)=> {
       setTenders(value)
       console.log("value ",value)
@@ -29,7 +31,7 @@ function MyTender() {
   return (
     <>
       <NavBar2 />
-        <SingleCard />
+        <SingleCard  />
       <Footer />
     </>
   );
