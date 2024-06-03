@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 function OfferCard() {
   return (
-      <div>
+      <div className='bg-primary'>
  <div style={{fontSize:"80px"}}>
-          <p className="bg-slate-950 font-semibold flex justify-center text-cyan-50 py-10"> My<span className="text-yellow-600 px-3">Offer</span> </p>
+          <p className=" font-semibold flex justify-center text-cyan-50 py-10"> My<span className="text-yellow-600 px-3">Offer</span> </p>
         </div>
- <div className="flex min-h-screen items-center justify-center flex-wrap bg-primary ">
+ <div className="flex min-h-screen items-center justify-center flex-wrap  ">
           <div className="relative flex max-w-[80%]  p-200 flex-row rounded-xl bg-secondary bg-clip-border text-gray-700 shadow-md">
             <div className="relative m-0  p-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700">
               <img

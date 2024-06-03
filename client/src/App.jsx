@@ -20,7 +20,6 @@ const App = () => {
 
   return (
     <div className="App">
-      <NavBarV2 />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/CreateTender" element={<CreateTender  />} />
@@ -34,7 +33,6 @@ const App = () => {
 
         <Route path="/test" element={ <Test />} />
       </Routes>
-      <Footer />
 
     </div>
   );
