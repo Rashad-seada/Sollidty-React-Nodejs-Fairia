@@ -1,31 +1,25 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 
-function Questions(Question,AnswerOne,AnswerTwo,Answerthree) {
+function Question(QuestionOne,QuestionTwo,QuestionThree) {
   return (
     <>
       <form className="main w-100% h-100vh bg-red-700 ">
         <div>
           <div className=" flex pb-2">
-            <label>{Question}</label>
+            <label>Question One</label>
           </div>
              <div className="flex items-center ">
                <div 
                style={{paddingLeft:"100px"}}>
                 <div>
-                  <input type="radio" /> 
-                  k
-                  {/* {AnswerOne} */}
+                  <input type="radio" /> {QuestionOne}
                 </div>
                 <div>
-                  <input type="radio" /> 
-                  {/* {AnswerTwo} */}
-                  l
+                  <input type="radio" /> {QuestionTwo}
                 </div>
                 <div>
-                  <input type="radio" />
-                  {/* {Answerthree} */}
-                  k
+                  <input type="radio" />{QuestionThree}
                 </div>
                </div>
              </div>
@@ -35,4 +29,4 @@ function Questions(Question,AnswerOne,AnswerTwo,Answerthree) {
   )
 }
 
-export default Questions;
+export default Question;
