@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { Link } from 'react-router-dom'
-function OfferCard() {
+function OfferCard(title,description ) {
   return (
       <div className='bg-primary'>
  <div style={{fontSize:"80px"}}>
@@ -20,12 +20,14 @@ function OfferCard() {
              
               <h4 className="mb-2 block pb-9 pt-10 font-sans text-3xl font-semibold leading-snug tracking-normal text-sky-400 antialiased">
                 Lyft launching cross-platform service this week
+                {/* {title} */}
               </h4>
               <p className="mb-4 block font-sans pb-5 text-base font-normal leading-relaxed text-gray-50 antialiased">
                 Like so many organizations these days, Autodesk is a company in
                 transition. It was until recently a traditional boxed software
                 company selling licenses. Yet its own business model disruption
                 is only part of the story
+                {/* {description} */}
               </p>
               <a className="flex justify-center pt-32 pl-96" href="#">
                 <Link
