@@ -53,11 +53,6 @@ function SingleCard(name,title,price,description) {
                       </span>
                     </div>
                   </div>
-                  <div className="flex-1">
-                    <p className="text-yellow-300 text-xl font-semibold">
-                      Bid bond
-                    </p>
-                  </div>
                 </div>
                 <p className="text-gray-500">{description}</p>
                 <div className="flex py-4 ">
@@ -76,7 +71,7 @@ function SingleCard(name,title,price,description) {
           </div>
         </div>
         \{" "}
-      </div>
+      </div>{" "}
     </>
   );
 }
