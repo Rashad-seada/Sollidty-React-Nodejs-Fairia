@@ -152,17 +152,7 @@ const TenderAppProvider = ({ children }) => {
 
         const tenderAppContract = getEthereumContract();
 
-        return await tenderAppContract.getTendersByApplicant().then((tenders) => {
-
-
-        
-        }).catch(async (error)=> {
-          const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
-  
-          alert(errorMessage)
-          throw new Error(errorData)
-  
-        });
+        return await tenderAppContract.getTendersByApplicant()
 
     }
   }
