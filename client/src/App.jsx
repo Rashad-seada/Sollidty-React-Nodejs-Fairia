@@ -15,25 +15,26 @@ import Test from "./pages/Test";
 import OfferCard from "./components/OfferCard";
 import NavBarV2 from "./components/NavBarV2";
 import Footer from "./components/Footer";
+import ApplyTender from "./pages/ApplyTender";
 // import Question from "./pages/Question";
 const App = () => {
 
   return (
     <div className="App">
+          <NavBarV2 />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/CreateTender" element={<CreateTender  />} />
         <Route path="/ExploreTender" element={<ExploreTender />} />
-        <Route path="/TenderPage" element={<TenderPage />} />
+        <Route path="/tender-page" element={<TenderPage />} />
         <Route Path="/About" element={<About />} />
-        <Route path="/MyTender/:id" element={ <MyTender />} />
+        <Route path="/my-tender/:id" element={ <MyTender />} />
         <Route path="/MyOffers" element={ <MyOffers />} />
         {/* <Route path="/Question" element={ <Question />} /> */}
-        <Route path="/OfferCard" element={ <OfferCard />} />
-
+        <Route path="/apply-tender" element={ <ApplyTender />} />
         <Route path="/test" element={ <Test />} />
       </Routes>
-
+      <Footer />
     </div>
   );
 };

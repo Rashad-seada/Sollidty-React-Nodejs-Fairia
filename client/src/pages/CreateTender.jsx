@@ -1,7 +1,5 @@
 import React, { useContext ,  useState } from "react";// eslint-disable-next-line no-unused-vars
 import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
-import NavBarV2 from "../components/NavBarV2";
 import {TenderAppContext} from"../context/TenderAppContext"
 import { ethers } from "ethers" ;
 
@@ -89,7 +87,6 @@ function CreateTender() {
   return (
 
     <React.Fragment>
-      <NavBarV2 />
       <div 
       onSubmit={e => e.preventDefault()}
       className="bg-slate-950  text-sky-400 flex min-h-screen w-80% flex-col items-center pt-16  sm:justify-center sm:pt-0">
@@ -324,7 +321,6 @@ function CreateTender() {
           </div>
         </div>
       </div>
-      <Footer />
     </React.Fragment>
   );
 }

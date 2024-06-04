@@ -1,10 +1,11 @@
+//My Tender Card
+
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { Link, useParams } from "react-router-dom";
-import { TenderAppContext } from "../context/TenderAppContext";
-import { useContext } from "react";
+import { Link } from "react-router-dom";
 
-function SingleCard(props) {
+
+function SingleCard(name,title,price,description) {
   // =>  name, title,price
 
   return (
@@ -30,12 +31,14 @@ function SingleCard(props) {
               </div>
               <div className="md:flex-1 px-4">
                 <h2 className="mb-2 leading-tight tracking-tight font-bold text-gray-200 text-2xl md:text-3xl">
-                  {props.title}
+                  {/* {title} */}
+                  title
                 </h2>
                 <p className="text-gray-500 text-sm">
                   By{" "}
                   <a href="#" className="text-indigo-600 hover:underline">
-                    {props.name}
+                    {/* {name} */}
+                    name
                   </a>
                 </p>
                 <div className="flex items-center space-x-4 my-4">
@@ -45,7 +48,8 @@ function SingleCard(props) {
                         ETH
                       </span>
                       <span className="font-bold text-white text-3xl">
-                        {props.price}
+                        {/* {price} */}
+                        price
                       </span>
                     </div>
                   </div>
@@ -55,7 +59,7 @@ function SingleCard(props) {
                     </p>
                   </div>
                 </div>
-                <p className="text-gray-500">{props.description}</p>
+                <p className="text-gray-500">{description}</p>
                 <div className="flex py-4 ">
                   <div className="relative"></div>
                   <Link
@@ -72,7 +76,7 @@ function SingleCard(props) {
           </div>
         </div>
         \{" "}
-      </div>{" "}
+      </div>
     </>
   );
 }

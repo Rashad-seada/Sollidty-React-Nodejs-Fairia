@@ -1,13 +1,15 @@
+
+// Explore Card
+
 import {Link} from "react-router-dom"
 
 const Card = (props) => {
 
-  const id = parseInt(props.id._hex).toString()
-  
+  // const id = parseInt(props.id._hex).toString()
 
-  console.log(id)
+  // console.log(id)
 
-  const path = `/MyTender/${id}`
+  // const path = `/MyTender/${id}`
   return (
     <div className="max-w-sm bg-secondary border-secondary border-solid border-4 rounded-lg mb-20">
     <a href="#">
@@ -21,8 +23,12 @@ const Card = (props) => {
             <h5 className="mb-2 text-2xl font-semibold tracking-tight text-sky-400 dark:text-white">{props.title}</h5>
         </a>
         <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">{props.description}</p>
-           
-    </div>
+<div className="flex p-10 m-2">
+             <Link
+             to={`/my-tender/${props.id}`}
+             className=" flex justify-center items-center bg-yellow-500 p-3 text-2xl  w-60 h-16 rounded-full " 
+             > Read more </Link>
+</div>    </div>
 </div>
   );
 };

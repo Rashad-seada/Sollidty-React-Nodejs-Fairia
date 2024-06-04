@@ -6,9 +6,11 @@ function MyOffers() {
 
   return (
     <div>
-              {Offer.map((tender, index) => (
+      <OfferCard/>
+              {/* {Offer.map((tender, index) => (
     <OfferCard  key={index} title= {tender.title} description = {tender.description} id = {tender.id} bidBond = {tender.bidBond}/>
-))}
+
+))} */}
 
       </div>
   )

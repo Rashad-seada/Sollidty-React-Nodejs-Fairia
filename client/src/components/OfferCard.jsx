@@ -64,7 +64,6 @@ function OfferCard() {
               />
             </div>
             <div className="p-6">
-             
               <h4 className="mb-2 block pb-9 font-sans text-2xl font-semibold leading-snug tracking-normal text-sky-400 antialiased">
                 Lyft launching cross-platform service this week
               </h4>

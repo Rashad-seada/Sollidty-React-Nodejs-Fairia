@@ -11,10 +11,7 @@ import NavBarV2 from '../components/NavBarV2';
 function Home() {
   return (
     <>
-  
-    <NavBarV2 />
     <HeaderV2 />
-    <Footer />
    </>
   )
 }

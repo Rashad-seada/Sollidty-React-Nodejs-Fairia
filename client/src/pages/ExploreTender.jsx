@@ -1,11 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext ,  useEffect, useState } from "react";// eslint-disable-next-line no-unused-vars
 import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
-import Card from "../components/Card";
+import Card from "../components/ExploreCard";
 import SearchBar from "../components/SearchBar";
-import NavBarV2 from "../components/NavBarV2";
 import {TenderAppContext} from"../context/TenderAppContext"
+// import SingleCard from "../components/SingleTender";
 
 function ExploreTender() {
   const {
@@ -28,7 +27,6 @@ function ExploreTender() {
 
   return (
     <div className="bg-slate-950">
-      <NavBarV2 />
       <div style={{fontSize:"80px"}}>
           <p className="bg-slate-950 font-semibold flex justify-center text-cyan-50 py-10"> Explore<span className="text-sky-400 px-3">Tender</span> </p>
         </div>
@@ -43,7 +41,6 @@ function ExploreTender() {
               <Card  key={index} title= {tender.title} description = {tender.description} id = {tender.id} bidBond = {tender.bidBond}/>
         ))}
       </div>
-      <Footer />
     </div>
   );
 }
