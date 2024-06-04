@@ -27,9 +27,7 @@ function MyTender(name,title,price,description) {
 
   return (
     <>
-      <NavBar2 />
         <SingleCard  />
-      <Footer />
     </>
   );
 }

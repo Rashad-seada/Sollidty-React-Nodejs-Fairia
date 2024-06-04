@@ -12,13 +12,12 @@ import TenderPage from "./pages/TenderPage";
 import MyTender from "./pages/MyTender";
 import MyOffers from "./pages/MyOffers";
 import Test from "./pages/Test";
-import OfferCard from "./components/OfferCard";
+// import OfferCard from "./components/OfferCard";
 import NavBarV2 from "./components/NavBarV2";
 import Footer from "./components/Footer";
 import ApplyTender from "./pages/ApplyTender";
 // import Question from "./pages/Question";
 const App = () => {
-
   return (
     <div className="App">
           <NavBarV2 />
