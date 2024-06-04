@@ -66,8 +66,7 @@ function SingleCard(props) {
             </div>
           </div>
         </div>
-        \{" "}
-      </div>{" "}
+      </div>
     </>
   );
 }
