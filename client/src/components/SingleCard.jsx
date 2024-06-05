@@ -31,14 +31,14 @@ function SingleCard(name,title,price,description) {
               </div>
               <div className="md:flex-1 px-4">
                 <h2 className="mb-2 leading-tight tracking-tight font-bold text-gray-200 text-2xl md:text-3xl">
-                  {/* {title} */}
-                  title
+                  {title}
+                  {/* title */}
                 </h2>
                 <p className="text-gray-500 text-sm">
                   By{" "}
                   <a href="#" className="text-indigo-600 hover:underline">
-                    {/* {name} */}
-                    name
+                    {name}
+                    {/* name */}
                   </a>
                 </p>
                 <div className="flex items-center space-x-4 my-4">
@@ -48,13 +48,15 @@ function SingleCard(name,title,price,description) {
                         ETH
                       </span>
                       <span className="font-bold text-white text-3xl">
-                        {/* {price} */}
-                        price
+                        {price}
+                        {/* price */}
                       </span>
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-500">{description}</p>
+                <p className="text-gray-500">
+                  {description}
+                  </p>
                 <div className="flex py-4 ">
                   <div className="relative"></div>
                   <Link
