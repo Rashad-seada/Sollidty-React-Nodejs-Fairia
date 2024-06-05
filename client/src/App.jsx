@@ -15,8 +15,8 @@ import Test from "./pages/Test";
 // import OfferCard from "./components/OfferCard";
 import NavBarV2 from "./components/NavBarV2";
 import Footer from "./components/Footer";
-import ApplyTender from "./pages/ApplyTender";
-import Question from "./pages/Question";
+import ApplyTenderPage from "./pages/ApplyTender";
+// import Question from "./pages/Question";
 const App = () => {
   return (
     <div className="App">
@@ -29,8 +29,8 @@ const App = () => {
         <Route Path="/About" element={<About />} />
         <Route path="/my-tender/:id" element={ <MyTender />} />
         <Route path="/MyOffers" element={ <MyOffers />} />
-        <Route path="/Question" element={ <Question />} />
-        <Route path="/apply-tender" element={ <ApplyTender />} />
+        {/* <Route path="/Question" element={ <Question />} /> */}
+        <Route path="/apply-tender/:id" element={ <ApplyTenderPage />} />
         <Route path="/test" element={ <Test />} />
       </Routes>
       <Footer />

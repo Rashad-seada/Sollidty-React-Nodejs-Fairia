@@ -1,8 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
+import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-function OfferCard(title,description ) {
+function OfferCard({title,description} ) {
+  
+  // const {id} = useParams ();
+  // console.log(id)
   return (
+    <>
       <div className='bg-primary'>
  <div style={{fontSize:"80px"}}>
           <p className=" font-semibold flex justify-center text-cyan-50 py-10"> My<span className="text-yellow-600 px-3">Offers</span> </p>
@@ -19,15 +24,15 @@ function OfferCard(title,description ) {
             <div className="p-6">
              
               <h4 className="mb-2 block pb-9 pt-10 font-sans text-3xl font-semibold leading-snug tracking-normal text-sky-400 antialiased">
-                Lyft launching cross-platform service this week
-                {/* {title} */}
+                {/* Lyft launching cross-platform service this week */}
+                {title}
               </h4>
               <p className="mb-4 block font-sans pb-5 text-base font-normal leading-relaxed text-gray-50 antialiased">
-                Like so many organizations these days, Autodesk is a company in
+                {/* Like so many organizations these days, Autodesk is a company in
                 transition. It was until recently a traditional boxed software
                 company selling licenses. Yet its own business model disruption
-                is only part of the story
-                {/* {description} */}
+                is only part of the story */}
+                {description}
               </p>
               <a className="flex justify-center pt-32 pl-96" href="#">
                 <Link
@@ -60,8 +65,8 @@ function OfferCard(title,description ) {
           />
 
 
-        
-<div className="relative flex max-w-[80%]  p-200 flex-row rounded-xl bg-secondary bg-clip-border text-gray-700 shadow-md">
+
+{/* <div className="relative flex max-w-[80%]  p-200 flex-row rounded-xl bg-secondary bg-clip-border text-gray-700 shadow-md">
             <div className="relative m-0  p-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700">
               <img
                 src="https://freedesignfile.com/upload/2016/06/Simple-blueprint-building-vectors-design-05.jpg"
@@ -108,9 +113,10 @@ function OfferCard(title,description ) {
           <link
             rel="stylesheet"
             href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
-          />
+          /> */}
 </div>
 </div>
+</>
   )
 }
 export default OfferCard
