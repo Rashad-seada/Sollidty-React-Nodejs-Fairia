@@ -38,10 +38,10 @@ const SingleCard = ({ title, description, name, price }) => {
                   <div>
                     <div className="rounded-xl bg-secondary flex py-3 px-3">
                       <span className="text-indigo-400 mr-1 mt-1 text-2xl font-semibold">
-                        Ether
+                        Ether   
                       </span>
                       <span className="font-bold text-white text-3xl">
-                        {price}
+                        {"   "+price}
                       </span>
                     </div>
                   </div>
