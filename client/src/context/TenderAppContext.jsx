@@ -104,23 +104,13 @@ const TenderAppProvider = ({ children }) => {
     }
   }
 
-  const applyToTender = async (tenderIndex,  form,  title,  description)=> {
+  const applyToTender = async (tenderIndex,  form,  title,  description,value)=> {
 
     if (ethereum) {
 
         const tenderAppContract = getEthereumContract();
 
-        return await tenderAppContract.applyToTender(id).then((tenders) => {
-
-
-        
-        }).catch(async (error)=> {
-          const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
-  
-          alert(errorMessage)
-          throw new Error(errorData)
-  
-        });
+        return await tenderAppContract.applyToTender(tenderIndex,  form,  title,  description,{value : value})
 
     }
   }

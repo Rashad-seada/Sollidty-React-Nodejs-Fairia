@@ -1,8 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { useParams } from "react-router-dom";
 const SingleCard = ({ title, description, name, price }) => {
+
+  const {id} = useParams ();
+  console.log(id)
   return (
     <>
       <div className="h-screen bg-primary pt-32">
@@ -26,15 +29,13 @@ const SingleCard = ({ title, description, name, price }) => {
               </div>
               <div className="md:flex-1 px-4">
                 <h2 className="mb-2 leading-tight tracking-tight font-bold text-gray-200 text-2xl md:text-3xl">
-                  {/* {title} */}
-                  title
+                  {title}
                 </h2>
                 <p className="text-gray-500 text-sm">
                   By{" "}
                   <a href="#" className="text-indigo-600 hover:underline">
-                    {/* {name} */}
-                    name
-                  </a> 
+                    {name}
+                  </a>
                 </p>
                 <div className="flex items-center space-x-4 my-4">
                   <div>
@@ -43,17 +44,16 @@ const SingleCard = ({ title, description, name, price }) => {
                         Ether
                       </span>
                       <span className="font-bold text-white text-3xl">
-                        {/* {price} */}
-                        price
+                        {price}
                       </span>
                     </div>
                   </div>
                 </div>
                 <p className="text-gray-500">{description}</p>
-                <div className="flex py-4 ">
+                <div className="flex py-4">
                   <div className="relative"></div>
                   <Link
-                    to="/Test"
+                    to={`/apply-tender/${id}`}
                     type="button"
                     className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-base transition-all duration-200 bg-yellow-300 hover:bg-yellow-300 hover:text-black focus:text-black focus:bg-yellow-300 font-semibold text-primary rounded-full"
                     role="button"

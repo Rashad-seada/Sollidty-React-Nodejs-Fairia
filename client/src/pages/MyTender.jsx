@@ -4,29 +4,35 @@ import NavBar2 from "../components/NavBarV2";
 import SingleCard from "../components/SingleCard";
 import { Link, useParams } from 'react-router-dom';
 import {TenderAppContext} from"../context/TenderAppContext" ;
-import { useContext ,useEffect} from "react";//,useEffect
+import { useContext,useEffect ,useState} from "react";
 import { ethers } from "ethers";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 //Start Code Function
-function MyTender() {
+function MyTender(name,title,price,description) {
 
-  const { getTenderById,tender,setTenders } = useContext(TenderAppContext);
-  let {id} = useParams();
-    console.log("id "+ id)
+  const { getTenderById } = useContext(TenderAppContext);
+  const [tender, setTender] = useState();
+  let { id } = useParams();
 
-    
+  useEffect(() => {
+    console.log("id ", id);
+    getTenderById(ethers.BigNumber.from(id))
+      .then((value) => {
+        setTender(value);
+        console.log("value ", value);
+      })
+      .catch((error) => {
+        console.log("Error Is ", error);
+      });
+  }, [id, getTenderById]);
 
-  getTenderById(ethers.BigNumber.from(id))
-    .then((value)=> {
-      setTenders(value)
-      console.log("value ",value)
-    }).catch((error)=> {
-      console.log("Error Is ",error)
-    })
-
-  // const singleTenderPage =  <SingleCard  />
+  useEffect(() => {
+    if (tender) {
+      console.log("value in tender state ", tender.id);
+    }
+  }, [tender]);
 
   return (
     <div>
@@ -42,6 +48,6 @@ function MyTender() {
       )}
     </div>
   );
- 
+  
 }
 export default MyTender;

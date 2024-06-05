@@ -3,9 +3,8 @@ import React from 'react'
 import OfferCard from '../components/OfferCard'
 import {TenderAppContext} from"../context/TenderAppContext"
 import  { useContext  } from "react";// eslint-disable-next-line no-unused-vars
-import NavBarV2 from '../components/NavBarV2';
 
-function MyOffers() {
+function MyOffers({title,description}) {
 
   const {
     getTendersByApplicant
@@ -14,7 +13,7 @@ function MyOffers() {
 
   return (
     <div>
-      <OfferCard />
+      <OfferCard title= {title} description = {description} />
               {/* {getTendersByApplicant.map((item, index) => (
     <OfferCard  key={index} title= {item.title} description = {item.description}  />
 
