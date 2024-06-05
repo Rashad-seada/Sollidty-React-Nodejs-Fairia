@@ -21,6 +21,7 @@ function ExploreTender() {
 
       alert(errorMessage)   
     })
+    
   }, []);
 
 
