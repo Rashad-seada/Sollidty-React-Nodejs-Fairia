@@ -8,7 +8,6 @@ function OfferCard({title,description} ) {
   // console.log(id)
   return (
     <>
-      <div className='bg-primary'>
  <div style={{fontSize:"80px"}}>
           <p className=" font-semibold flex justify-center text-cyan-50 py-10"> My<span className="text-yellow-600 px-3">Offers</span> </p>
         </div>
@@ -22,7 +21,6 @@ function OfferCard({title,description} ) {
               />
             </div>
             <div className="p-6">
-             
               <h4 className="mb-2 block pb-9 pt-10 font-sans text-3xl font-semibold leading-snug tracking-normal text-sky-400 antialiased">
                 {/* Lyft launching cross-platform service this week */}
                 {title}
@@ -114,7 +112,6 @@ function OfferCard({title,description} ) {
             rel="stylesheet"
             href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
           /> */}
-</div>
 </div>
 </>
   )

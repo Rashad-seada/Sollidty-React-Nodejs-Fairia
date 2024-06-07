@@ -3,6 +3,7 @@ import {TenderAppContext} from"../context/TenderAppContext"
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { ethers } from "ethers";
+import { parseBytes32String } from "ethers/lib/utils";
 
 function ApplyTender() {
 
@@ -40,7 +41,6 @@ function ApplyTender() {
         From,
         Title,
         Description,
-        ethers.BigNumber.from(200000000)
       )
       console.log("Success")
     } catch(error) {
