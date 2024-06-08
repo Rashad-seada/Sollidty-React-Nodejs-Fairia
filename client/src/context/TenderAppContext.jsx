@@ -144,6 +144,8 @@ const TenderAppProvider = ({ children }) => {
     }
   }
 
+  
+
   const getTendersByApplicant = async ()=> {
 
     if (ethereum) {
