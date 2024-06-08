@@ -57,34 +57,11 @@ function ApplyTender() {
   async function onSubmit() {
     try {
       // Estimate gas cost using the appropriate function
-      const gasEstimate = await estimateGas(
-        ethers.BigNumber.from(id),
-        From,
-        Title,
-        Description,
-        ethers.utils.parseEther(tender.bidBond.toString())
-      );
-  
-      // Get the current gas price
-      const gasPrice = await getGasPrice();
-  
-      // Calculate the total transaction cost
-      const totalTransactionCost = gasEstimate.mul(gasPrice).add(ethers.utils.parseEther(tender.bidBond.toString()));
-  
-      // Check if the current account has sufficient balance
-      const balance = await getAccountBalance();
-      if (balance.lt(totalTransactionCost)) {
-        throw new Error("Insufficient balance to cover transaction cost");
-      }
-  
-      // Call applyToTender function with gas estimation
       await applyToTender(
         ethers.BigNumber.from(id),
         From,
         Title,
         Description,
-        ethers.utils.parseEther(tender.bidBond.toString()), // Example: setting the bid bond to 1 ETH
-        gasEstimate
       );
       console.log("Success");
     } catch (error) {

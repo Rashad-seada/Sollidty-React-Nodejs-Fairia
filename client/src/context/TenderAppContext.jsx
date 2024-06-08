@@ -104,19 +104,17 @@ const TenderAppProvider = ({ children }) => {
     }
   }
 
-  const applyToTender = async (tenderIndex,  form,  title,  description, value, gasLimit)=> {
+  const applyToTender = async (tenderIndex,  form,  title,  description)=> {
 
     if (ethereum) {
 
         const tenderAppContract = getEthereumContract();
 
         return await tenderAppContract.applyToTender(
-          tenderIndex,
+            tenderIndex,
             form,
             title,
             description,
-            {value : value},
-            {gasLimit: gasLimit}
         )
 
     }

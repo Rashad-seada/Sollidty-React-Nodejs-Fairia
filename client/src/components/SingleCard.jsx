@@ -18,13 +18,13 @@ const SingleCard = ({ title, description, name, price }) => {
           {/* ./ Breadcrumbs */}
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 ">
-            <div className="flex flex-col md:flex-row -mx-4">
+            <div className="flex  md:flex-row -mx-4">
               <div className="md:flex-1 px-4">
                 <div>
                   <div className="h-64 md:h-80 rounded-lg mb-4">
                     <img
                       src="https://freedesignfile.com/upload/2016/06/Simple-blueprint-building-vectors-design-05.jpg"
-                      className="w-full relative z-10 rounded-3xl"
+                      className="w-50 relative z-10 rounded-3xl"
                       alt=""
                     />
                   </div>
@@ -61,7 +61,7 @@ const SingleCard = ({ title, description, name, price }) => {
                   <Link
                     to={`/apply-tender/${id}`}
                     type="button"
-                    className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-base transition-all duration-200 bg-yellow-300 hover:bg-yellow-300 hover:text-black focus:text-black focus:bg-yellow-300 font-semibold text-primary rounded-full"
+                    className=" lg:inline-flex items-center justify-center px-5 py-2.5 text-base transition-all duration-200 bg-yellow-300 hover:bg-yellow-300 hover:text-black focus:text-black focus:bg-yellow-300 font-semibold text-primary rounded-full"
                     role="button"
                   >
                     Apply now
