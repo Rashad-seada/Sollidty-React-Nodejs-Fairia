@@ -5,13 +5,13 @@ import { useParams } from "react-router-dom";
 import ApplicantCard from "./ApplicantsCard";
 ApplicantCard;
 
-const SingleCard = ({ title, description, name, price ,ditails}) => {
+const SingleCard = ({ title, description, name, price,ditails }) => {
   const { id } = useParams();
   console.log(id);
   return (
     <div 
-    className="bg-primary "
-    style={{height:"150vh"}}>
+    className="bg-primary h-auto"
+    >
       <div className=" pt-6">
         <div style={{ fontSize: "60px" }}>
           <p className="bg-slate-950 font-semibold flex justify-center text-cyan-50 py-10">
@@ -78,9 +78,21 @@ const SingleCard = ({ title, description, name, price ,ditails}) => {
 
         <div >
           <ApplicantCard ditails={ditails}/>
-          
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+
         </div>
 
+<div className="h-36"></div>
 
 
       </div>

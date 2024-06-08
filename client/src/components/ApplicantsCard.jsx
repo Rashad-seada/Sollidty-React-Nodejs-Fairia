@@ -5,7 +5,7 @@ function ApplicantCard({ditails}){
       <>
       {/* component */}
       {/* This is an example component */}
-      <div className="max-w-2xl ml-44 mt-20 bg-primary p-5 border border-sky-700 rounded-sm">
+      <div className="flex flex-wrap  max-w-2xl ml-44 mt-20 bg-secondary p-5 border border-sky-700 rounded-sm">
         <div className="relative w-10 h-10 overflow-hidden bg-primary rounded-full dark:bg-gray-600">
           <svg
             className="absolute w-12 h-12 text-sky-400 -left-1"
@@ -26,7 +26,7 @@ function ApplicantCard({ditails}){
         </p>
       </div>
     </>
-    
+
 
     )
 }
