@@ -38,7 +38,7 @@ function MyTender({name,title,price,description}) {
 
       });
 
-
+ 
   }, [id, getTenderById]);
 
   useEffect(() => {
