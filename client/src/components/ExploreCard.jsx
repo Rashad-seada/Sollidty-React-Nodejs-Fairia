@@ -2,7 +2,7 @@
 // Explore Card
 
 import {Link} from "react-router-dom"
-
+import ApplyTenderPage from "../pages/ApplyTender";
 const Card = (props) => {
 
   // const id = parseInt(props.id._hex).toString()
