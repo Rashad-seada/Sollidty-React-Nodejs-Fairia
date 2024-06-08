@@ -12,20 +12,32 @@ import 'react-loading-skeleton/dist/skeleton.css'
 //Start Code Function
 function MyTender(name,title,price,description) {
 
-  const { getTenderById } = useContext(TenderAppContext);
+  const { getTenderById, getApplicantsByTender } = useContext(TenderAppContext);
   const [tender, setTender] = useState();
+  const [applicants, setApplicants] = useState();
+
   let { id } = useParams();
 
   useEffect(() => {
     console.log("id ", id);
+
+    getApplicantsByTender(ethers.BigNumber.from(id))
+      .then((value)=> {
+        setApplicants(value)
+      })
+      .catch((error)=> {
+
+      })
+
     getTenderById(ethers.BigNumber.from(id))
       .then((value) => {
         setTender(value);
-        console.log("value ", value);
       })
       .catch((error) => {
-        console.log("Error Is ", error);
+
       });
+
+      
   }, [id, getTenderById]);
 
   useEffect(() => {

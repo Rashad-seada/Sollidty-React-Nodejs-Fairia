@@ -93,11 +93,6 @@ function ApplyTender() {
       alert(errorMessage);
     }
   }
-  
-  // TenderAppContext
-  
-  
-  
 
   return (
 

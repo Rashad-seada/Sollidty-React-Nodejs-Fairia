@@ -229,7 +229,6 @@ contract TenderApp {
         return applicantTenders;
     }
 
-
     
 }
 
