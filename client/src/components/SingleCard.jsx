@@ -78,6 +78,18 @@ const SingleCard = ({ title, description, name, price,ditails }) => {
 
         <div >
           <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+          <ApplicantCard ditails={ditails}/>
+
         </div>
 
 <div className="h-36"></div>
