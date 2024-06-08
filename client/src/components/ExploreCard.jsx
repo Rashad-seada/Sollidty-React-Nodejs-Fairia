@@ -22,11 +22,11 @@ const Card = (props) => {
         <a href="#">
             <h5 className="mb-2 text-2xl font-semibold tracking-tight text-sky-400 dark:text-white">{props.title}</h5>
         </a>
-        <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">{props.description}</p>
-<div className="flex p-10 m-2">
+        <p className="mb-3 font-normal text-gray-50 dark:text-gray-400">{props.description}</p>
+<div className="flex p-10 pt-16 m-2">
              <Link
              to={`/my-tender/${props.id}`}
-             className=" flex justify-center items-center bg-yellow-500 p-3 text-2xl  w-60 h-16 rounded-full " 
+             className=" flex justify-center items-center bg-yellow-500 p-3 text-xl  w-60 h-10 rounded-full " 
              > Read more </Link>
 </div>    </div>
 </div>
