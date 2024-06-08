@@ -23,11 +23,26 @@ const Card = (props) => {
             <h5 className="mb-2 text-2xl font-semibold tracking-tight text-sky-400 dark:text-white">{props.title}</h5>
         </a>
         <p className="mb-3 font-normal text-gray-50 dark:text-gray-400">{props.description}</p>
-<div className="flex p-10 pt-16 m-2">
+<div className="flex p-1 pt-16 m-2 ">
              <Link
              to={`/my-tender/${props.id}`}
-             className=" flex justify-center items-center bg-yellow-500 p-3 text-xl  w-60 h-10 rounded-full " 
-             > Read more </Link>
+             className=" flex justify-center items-center bg-yellow-500 p-3 text-lg  w-40 h-10 rounded-xl " 
+             > Read more
+               <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1}
+              stroke="currentColor"
+              aria-hidden="true"
+              className=" w-10  pl-3"
+            >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                    />
+                  </svg> </Link>
 </div>    </div>
 </div>
   );
