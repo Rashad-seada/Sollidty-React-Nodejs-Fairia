@@ -139,14 +139,14 @@ contract TenderApp {
         latestIndex = latestIndex + 1;
     }
 
-    function applyToTender(uint256 tenderIndex, string memory form, string memory title, string memory description) public payable {
+    function applyToTender(uint256 tenderIndex, string memory form, string memory title, string memory description) public {
         require(tenderIndex < tenders.length, "Invalid tender index");
-        require(msg.value == tenders[tenderIndex].bidBond, "Invalid bid bond amount");
+        //require(msg.value == tenders[tenderIndex].bidBond, "Invalid bid bond amount");
 
         
 
         Tender storage tender = tenders[tenderIndex];
-        require(msg.sender != tender.auther, "Applicants cannot be the tender author");
+        //require(msg.sender != tender.auther, "Applicants cannot be the tender author");
 
         applicants.push(Applicants({
             tenderId : tenderIndex,
