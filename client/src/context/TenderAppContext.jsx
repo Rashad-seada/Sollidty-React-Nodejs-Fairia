@@ -104,15 +104,35 @@ const TenderAppProvider = ({ children }) => {
     }
   }
 
-  const applyToTender = async (tenderIndex,  form,  title,  description,value)=> {
+  const applyToTender = async (tenderIndex,  form,  title,  description, value, gasLimit)=> {
 
     if (ethereum) {
 
         const tenderAppContract = getEthereumContract();
 
-        return await tenderAppContract.applyToTender(tenderIndex,  form,  title,  description,{value : value})
+        return await tenderAppContract.applyToTender(
+          tenderIndex,
+            form,
+            title,
+            description,
+            {value : value},
+            {gasLimit: gasLimit}
+        )
 
     }
+  }
+
+  const estimateGas = async ( tenderIndex, form, title, description, value)=>  {
+    const tenderAppContract = getEthereumContract();
+
+    const gasEstimate = await tenderAppContract.estimateGas.applyToTender(
+      tenderIndex,
+      form,
+      title,
+      description,
+      { value }
+    );
+    return gasEstimate;
   }
 
   const getTendersByAuthor = async ()=> {
@@ -168,6 +188,31 @@ const TenderAppProvider = ({ children }) => {
     }
   }
 
+  const getGasPrice = async () => {
+    try {
+      // Get the current gas price
+      const provider = new ethers.providers.JsonRpcProvider();
+      const gasPrice = await provider.getGasPrice();
+      return gasPrice;
+    } catch (error) {
+      console.error("Error fetching gas price:", error);
+      // Handle error appropriately
+    }
+  };
+  
+  const getAccountBalance = async () => {
+    try {
+      // Get the current account balance
+      const provider = new ethers.providers.JsonRpcProvider();
+      const currentAccount = await provider.getSigner().getAddress();
+      const balance = await provider.getBalance(currentAccount);
+      return balance;
+    } catch (error) {
+      console.error("Error fetching account balance:", error);
+      // Handle error appropriately
+    }
+  };
+
   useEffect( () => {
     checkIfTheWalletIsConnected();
 
@@ -195,7 +240,10 @@ const TenderAppProvider = ({ children }) => {
           setTendersByApplicant,
 
           tender,
-          setTender
+          setTender,
+          estimateGas,
+          getGasPrice,
+          getAccountBalance
         }}
     >
       {children}
