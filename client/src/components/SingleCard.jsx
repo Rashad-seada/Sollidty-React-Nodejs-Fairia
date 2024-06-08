@@ -14,7 +14,7 @@ const SingleCard = ({ title, description, name, price }) => {
         </div>
         
         
-        <div className="py-6 b">
+        <div className="py-6">
           {/* ./ Breadcrumbs */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 ">
             <div className="flex flex-col md:flex-row -mx-4">
