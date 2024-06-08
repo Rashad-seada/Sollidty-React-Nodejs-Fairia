@@ -19,7 +19,7 @@ const Card = (props) => {
         />
     </a>
     <div className="p-5">
-        <a href="#">
+        <a href="#"> 
             <h5 className="mb-2 text-2xl font-semibold tracking-tight text-sky-400 dark:text-white">{props.title}</h5>
         </a>
         <p className="mb-3 font-normal text-gray-50 dark:text-gray-400">{props.description}</p>
