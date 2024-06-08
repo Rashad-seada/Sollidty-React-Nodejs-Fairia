@@ -1,43 +1,28 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useState } from 'react';
 
-function Question() {
-        //Question,AnswerOne,AnswerTwo,AnswerThree
+const Question = (options,selectedValue) => {
+  const [selectedOption, setSelectedOption] = useState(selectedValue);
+
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
 
   return (
-    <>
-    <form className="main w-100% h-100vh bg-red-700 ">
-      <div>
-        <div className=" flex pb-2">
-          <label>
-              {/* {Question} */}
-              Question
-              </label>
+    <div>
+      {options.map((option) => (
+        <div key={option.value}>
+          <input
+            type="radio"
+            name="radio-group"
+            value={option.value}
+            checked={selectedOption === option.value}
+            onChange={handleOptionChange}
+          />
+          <label>{option.label}</label>
         </div>
-           <div className="flex items-center ">
-             <div 
-             style={{paddingLeft:"100px"}}>
-              <div>
-                <input type="radio" /> 
-                k
-                {AnswerOne}
-              </div>
-              <div>
-                <input type="radio" /> 
-                {AnswerTwo}
-                l
-              </div>
-              <div>
-                <input type="radio" />
-                {AnswerThree}
-                k
-              </div>
-             </div>
-           </div>
-       </div>
-    </form>
-  </>
-  )
-}
+      ))}
+    </div>
+  );
+};
 
 export default Question;
