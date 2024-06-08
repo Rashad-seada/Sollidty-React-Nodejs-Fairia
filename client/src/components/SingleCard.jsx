@@ -27,11 +27,7 @@ const SingleCard = ({ title, description, name, price ,ditails}) => {
                   <div className="h-64 md:h-80 rounded-lg mb-4">
                     <img
                       src="https://freedesignfile.com/upload/2016/06/Simple-blueprint-building-vectors-design-05.jpg"
-<<<<<<< HEAD
-                      className="w-50 relative z-10 rounded-3xl"
-=======
                       className=" relative z-10 rounded-3xl"
->>>>>>> 98262276f1f3caf2f5de405c6dba9054b47a4df3
                       alt=""
                     />
                   </div>
@@ -82,6 +78,7 @@ const SingleCard = ({ title, description, name, price ,ditails}) => {
 
         <div >
           <ApplicantCard ditails={ditails}/>
+          
         </div>
 
 
