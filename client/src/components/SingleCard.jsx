@@ -8,7 +8,12 @@ const SingleCard = ({ title, description, name, price }) => {
   console.log(id)
   return (
     <>
-      <div className="h-screen bg-primary pt-32">
+      <div className="h-screen bg-primary pt-6">
+      <div style={{fontSize:"60px"}}>
+          <p className="bg-slate-950 font-semibold flex justify-center text-cyan-50 py-10"> Tender <span className="text-sky-400 px-3">Details</span> </p>
+        </div>
+        
+        
         <div className="py-6">
           {/* ./ Breadcrumbs */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
@@ -27,7 +32,7 @@ const SingleCard = ({ title, description, name, price }) => {
                   </div>
                 </div>
               </div>
-              <div className="md:flex-1 px-4">
+              <div className="md:flex-1 p-10 ">
                 <h2 className="mb-2 leading-tight tracking-tight font-bold text-gray-200 text-2xl md:text-3xl">
                   {title}
                 </h2>

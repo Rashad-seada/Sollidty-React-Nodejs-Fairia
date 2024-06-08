@@ -10,7 +10,7 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 //Start Code Function
-function MyTender(name,title,price,description) {
+function MyTender({name,title,price,description}) {
 
   const { getTenderById } = useContext(TenderAppContext);
   const [tender, setTender] = useState();
