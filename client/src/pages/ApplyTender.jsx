@@ -7,6 +7,7 @@ function ApplyTenderPage() {
 
   return (
     <React.Fragment>
+      
       <ApplyTender />
 
     </React.Fragment>
