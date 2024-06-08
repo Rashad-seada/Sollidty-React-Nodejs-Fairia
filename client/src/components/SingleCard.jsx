@@ -12,10 +12,11 @@ const SingleCard = ({ title, description, name, price }) => {
       <div style={{fontSize:"60px"}}>
           <p className="bg-slate-950 font-semibold flex justify-center text-cyan-50 py-10"> Tender <span className="text-sky-400 px-3">Details</span> </p>
         </div>
-        
-        
+
         <div className="py-6">
+
           {/* ./ Breadcrumbs */}
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 ">
             <div className="flex flex-col md:flex-row -mx-4">
               <div className="md:flex-1 px-4">
