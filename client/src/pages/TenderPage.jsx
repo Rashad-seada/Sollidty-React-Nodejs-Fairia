@@ -46,41 +46,41 @@ function TenderPage(
             <div className="mb-10">
                 
               <h1 className="font-bold uppercase text-2xl text-sky-50 mb-5">
-                {Form}
+                {/* {Form} */}
                 From is here
               </h1>
 
               <h2>
-                {Title}
+                {/* {Title} */}
                 Title is here
                 </h2>
 
               <p className="text-sm">
-                {Description}
+                {/* {Description} */}
                 Description is here
               </p>
 
               <h3>
-                {BidBond}
+                {/* {BidBond} */}
                 BidBond
               </h3>
               <h3>
-                {prequalificationDeadline}
+                {/* {prequalificationDeadline} */}
                 prequalificationDeadline
               </h3>
               
               <h3>
-                {BidSubmiissionDeadlind}
+                {/* {BidSubmiissionDeadlind} */}
                 BidSubmiissionDeadlind
               </h3>
               
               <h3>
-                {ContractSignDeadline}
+                {/* {ContractSignDeadline} */}
                 ContractSignDeadline
               </h3> 
               
               <p>
-                {KeyWord}
+                {/* {KeyWord} */}
                 KeyWord
               </p>
 
@@ -96,6 +96,8 @@ function TenderPage(
           </div>
         </div>
       </div>
+
+
       {/* <SingleCard/> */}
   </>
 

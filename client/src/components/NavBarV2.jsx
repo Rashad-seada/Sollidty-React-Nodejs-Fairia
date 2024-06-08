@@ -53,7 +53,7 @@ function NavBarV2() {
               </a>
 
               <a
-                href="offer-card"
+                href="/MyOffers"
                 title=""
                 className="text-base text-white transition-all duration-200 hover:text-opacity-80"
               >
@@ -62,7 +62,7 @@ function NavBarV2() {
               </a>
 
               <a
-                href="tender-page"
+                href="/tender-page"
                 title=""
                 className="text-base text-white transition-all duration-200 hover:text-opacity-80"
               >
