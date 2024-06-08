@@ -37,7 +37,7 @@ function MyTender({name,title,price,description}) {
 
       });
 
-      
+
   }, [id, getTenderById]);
 
   useEffect(() => {
@@ -55,9 +55,11 @@ function MyTender({name,title,price,description}) {
           name={tender.from || "title"}
           price={parseInt(tender.bidBond) || "title"}
         />
+        
       ) : (
         <Skeleton /> // Simple, single-line loading skeleton
       )}
+      
     </div>
   );
   
