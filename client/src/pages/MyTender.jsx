@@ -64,6 +64,8 @@ function MyTender({name,title,price,description}) {
         <Skeleton /> // Simple, single-line loading skeleton
       )}
       
+
+
     </div>
   );
   

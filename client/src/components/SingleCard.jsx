@@ -2,21 +2,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-const SingleCard = ({ title, description, name, price }) => {
+import ApplicantCard from "./ApplicantsCard";
+ApplicantCard;
 
-  const {id} = useParams ();
-  console.log(id)
+const SingleCard = ({ title, description, name, price ,ditails}) => {
+  const { id } = useParams();
+  console.log(id);
   return (
-    <>
-      <div className="h-screen bg-primary pt-6">
-      <div style={{fontSize:"60px"}}>
-          <p className="bg-slate-950 font-semibold flex justify-center text-cyan-50 py-10"> Tender <span className="text-sky-400 px-3">Details</span> </p>
+    <div 
+    className="bg-primary "
+    style={{height:"150vh"}}>
+      <div className=" pt-6">
+        <div style={{ fontSize: "60px" }}>
+          <p className="bg-slate-950 font-semibold flex justify-center text-cyan-50 py-10">
+            {" "}
+            Tender <span className="text-sky-400 px-3">Details</span>{" "}
+          </p>
         </div>
-
-        <div className="py-6">
-
-          {/* ./ Breadcrumbs */}
-
+        <div className="py-6 w-screen">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 ">
             <div className="flex  md:flex-row -mx-4">
               <div className="md:flex-1 px-4">
@@ -24,7 +27,11 @@ const SingleCard = ({ title, description, name, price }) => {
                   <div className="h-64 md:h-80 rounded-lg mb-4">
                     <img
                       src="https://freedesignfile.com/upload/2016/06/Simple-blueprint-building-vectors-design-05.jpg"
+<<<<<<< HEAD
                       className="w-50 relative z-10 rounded-3xl"
+=======
+                      className=" relative z-10 rounded-3xl"
+>>>>>>> 98262276f1f3caf2f5de405c6dba9054b47a4df3
                       alt=""
                     />
                   </div>
@@ -47,10 +54,10 @@ const SingleCard = ({ title, description, name, price }) => {
                   <div>
                     <div className="rounded-xl bg-secondary flex py-3 px-3">
                       <span className="text-indigo-400 mr-1 mt-1 text-2xl font-semibold">
-                        Ether   
+                        Ether
                       </span>
                       <span className="font-bold text-white text-3xl">
-                        {"   "+price}
+                        {"   " + price}
                       </span>
                     </div>
                   </div>
@@ -70,10 +77,18 @@ const SingleCard = ({ title, description, name, price }) => {
               </div>
             </div>
           </div>
+
         </div>
+
+        <div >
+          <ApplicantCard ditails={ditails}/>
+        </div>
+
+
+
       </div>
-    </>
+       </div>
   );
-}
+};
 
 export default SingleCard;
