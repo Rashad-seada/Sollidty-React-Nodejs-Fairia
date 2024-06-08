@@ -14,11 +14,7 @@ function MyOffers({title,description}) {
   return (
     <div>
       <OfferCard title= {title} description = {description} />
-              {/* {getTendersByApplicant.map((item, index) => (
-    <OfferCard  key={index} title= {item.title} description = {item.description}  />
-
-))}  */}
-
+          
       </div>
   )
 }
