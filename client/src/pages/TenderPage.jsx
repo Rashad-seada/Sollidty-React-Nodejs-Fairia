@@ -41,6 +41,9 @@ function TenderPage(
 
   return (
     <>
+    <div style={{fontSize:"50px"}}>
+          <p className="bg-slate-950 font-semibold flex justify-center text-cyan-50 py-10"> My<span className="text-sky-400 px-3">Tenders</span> </p>
+        </div>
 
     
 
@@ -49,8 +52,9 @@ function TenderPage(
       ) : (
         <div className="offers-list">
           {tenders.map((tender, index) => (
-                  <div className="min-w-screen min-h-screen bg-slate-950 flex items-center p-5 lg:p-10 overflow-hidden relative">
-                  <div className="w-full max-w-6xl rounded bg-secondary shadow-xl p-10 lg:p-20 mx-auto text-sky-400 relative md:text-left">
+                  <div className="min-w-[70%] min-h-[10%] bg-slate-950 flex items-center p-1 lg:p-10 overflow-hidden relative">
+                  
+                  <div className="w-full max-w-5xl rounded  bg-secondary shadow-xl p-10 mx-auto text-sky-400 relative md:text-left">
                     <div className="md:flex items-center -mx-10">
                       <div className="w-full md:w-1/2 px-10 mb-10 md:mb-0">
                         <div className="relative">
@@ -65,15 +69,15 @@ function TenderPage(
                       <div className="w-full md:w-1/2 px-10">
                         <div className="mb-10">
                             
-                          <h1 className="font-bold uppercase text-2xl text-sky-50 mb-5">
+                          <h1 className="font-bold uppercase text-3xl text-sky-50 mb-5">
                             {tender.form}
                           </h1>
             
-                          <h2>
+                          <h2 className='text-sky-300 text-4xl pb-3'>
                             {tender.title}
                             </h2>
             
-                          <p className="text-sm">
+                          <p className="text-sm text-white ">
                             {tender.description}
                           </p>
           
@@ -83,12 +87,26 @@ function TenderPage(
                           </p>
             
                         </div>
-                          <div className="inline-block align-bottom">
+                          <div className="flex ">
                             <Link 
-                            to="/apply-tender"
-                            className="bg-sky-700 opacity-75 hover:opacity-100 text-sky-50 hover:text-sky-50 rounded-full px-10 py-2 font-semibold">
-                              <i className="mdi mdi-cart -ml-2 mr-2" /> Apply  
-                            </Link>
+                            to={`/my-tender/${tender.id}`}
+                            className=" flex justify-center items-center text-black bg-yellow-500 p-3 text-sm  w-40 h-10 rounded-xl " 
+                            > View Details
+                              <svg
+                             xmlns="http://www.w3.org/2000/svg"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             strokeWidth={1}
+                             stroke="currentColor"
+                             aria-hidden="true"
+                             className=" w-10  pl-3"
+                           >
+                                   <path
+                                     strokeLinecap="round"
+                                     strokeLinejoin="round"
+                                     d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                                   />
+                                 </svg> </Link>
                           </div>
                         </div>
                       </div>

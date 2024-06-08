@@ -23,10 +23,10 @@ const Card = (props) => {
             <h5 className="mb-2 text-2xl font-semibold tracking-tight text-sky-400 dark:text-white">{props.title}</h5>
         </a>
         <p className="mb-3 font-normal text-gray-50 dark:text-gray-400">{props.description}</p>
-<div className="flex p-1 pt-16 m-2 ">
+<div className="flex p-1 pt-5 m-2 ">
              <Link
              to={`/my-tender/${props.id}`}
-             className=" flex justify-center items-center bg-yellow-500 p-3 text-lg  w-40 h-10 rounded-xl " 
+             className=" flex justify-center items-center bg-yellow-500 p-1 text-lg  w-40 h-10 rounded-xl  text-black" 
              > Read more
                <svg
               xmlns="http://www.w3.org/2000/svg"

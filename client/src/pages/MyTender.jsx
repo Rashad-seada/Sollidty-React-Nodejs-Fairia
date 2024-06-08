@@ -8,6 +8,7 @@ import { useContext,useEffect ,useState} from "react";
 import { ethers } from "ethers";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import ApplicantCard from "../components/ApplicantsCard";
 
 //Start Code Function
 function MyTender({name,title,price,description}) {
@@ -37,7 +38,7 @@ function MyTender({name,title,price,description}) {
 
       });
 
-      
+
   }, [id, getTenderById]);
 
   useEffect(() => {
@@ -49,15 +50,20 @@ function MyTender({name,title,price,description}) {
   return (
     <div>
       {tender ? (
+
         <SingleCard
           title={tender.title || "title"}
           description={tender.description || "title"}
           name={tender.from || "title"}
           price={parseInt(tender.bidBond) || "title"}
         />
+
+        
+        
       ) : (
         <Skeleton /> // Simple, single-line loading skeleton
       )}
+      
     </div>
   );
   
