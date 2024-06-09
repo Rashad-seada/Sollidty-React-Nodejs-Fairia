@@ -1,4 +1,4 @@
-function ApplicantCard({ ditails, from }) {
+function ApplicantCard({ description, from ,Applicant,Title}) {
   return (
     <>
       {/* component */}
@@ -23,13 +23,13 @@ function ApplicantCard({ ditails, from }) {
           
             <div className="text-red-700 ">
             <div className=" pl-10">
-            <p> Applicant</p>
-                <h3> from</h3>
+            <p> {Applicant}</p>
+                <h3> {from}</h3>
             </div>
          
            <div className="text-red-600 pt-4  -left-1">
-           <h1> Title</h1>
-             <p className=" text-white">description</p>
+           <h1> {Title}</h1>
+             <p className=" text-white">{description}</p>
            </div>
         </div>
 
