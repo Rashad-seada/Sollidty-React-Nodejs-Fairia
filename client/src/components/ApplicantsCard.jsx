@@ -1,12 +1,11 @@
-function ApplicantCard({ditails}){
-
-
-    return (
-      <>
+function ApplicantCard({ ditails, from }) {
+  return (
+    <>
       {/* component */}
       {/* This is an example component */}
-      <div className="flex flex-wrap  max-w-2xl ml-44 mt-20 bg-secondary p-5 border border-sky-700 rounded-sm">
+      <div className="flex flex-wrap  max-w-2xl ml-44 mt-20 bg-secon p-5 border border-sky-700 rounded-sm">
         <div className="relative w-10 h-10 overflow-hidden bg-primary rounded-full dark:bg-gray-600">
+
           <svg
             className="absolute w-12 h-12 text-sky-400 -left-1"
             fill="currentColor"
@@ -20,15 +19,24 @@ function ApplicantCard({ditails}){
             ></path>
           </svg>
         </div>
-        <p className="mt-5 text-white">
-          {ditails}
+
+          
+            <div className="text-red-700 ">
+            <div className=" pl-10">
+            <p> Applicant</p>
+                <h3> from</h3>
+            </div>
          
-        </p>
+           <div className="text-red-600 pt-4  -left-1">
+           <h1> Title</h1>
+             <p className=" text-white">description</p>
+           </div>
+        </div>
+
+
       </div>
     </>
-
-
-    )
+  );
 }
 
 export default ApplicantCard;
