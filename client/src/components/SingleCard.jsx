@@ -1,13 +1,32 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import {React, useContext,useEffect ,useState} from "react";
+import {TenderAppContext} from"../context/TenderAppContext" ;
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import ApplicantCard from "./ApplicantsCard";
-ApplicantCard;
+import { ethers } from "ethers";
+
 
 const SingleCard = ({ title, description, name, price,ditails }) => {
   const { id } = useParams();
   console.log(id);
+
+  const [applicants, setApplicants] = useState();
+  const { getApplicantsByTender } = useContext(TenderAppContext);
+
+  useEffect(()=> {
+    getApplicantsByTender(ethers.BigNumber.from(id))
+    .then((value)=> {
+      setApplicants(value)
+    })
+    .catch((error)=> {
+
+    })
+  },[])
+
+
+
+
   return (
     <div 
     className="bg-primary h-auto"
@@ -77,19 +96,25 @@ const SingleCard = ({ title, description, name, price,ditails }) => {
         </div>
 
         <div >
-          <ApplicantCard ditails={ditails}/>
-          <ApplicantCard ditails={ditails}/>
-          <ApplicantCard ditails={ditails}/>
-          <ApplicantCard ditails={ditails}/>
-          <ApplicantCard ditails={ditails}/>
-          <ApplicantCard ditails={ditails}/>
-          <ApplicantCard ditails={ditails}/>
-          <ApplicantCard ditails={ditails}/>
-          <ApplicantCard ditails={ditails}/>
-          <ApplicantCard ditails={ditails}/>
-          <ApplicantCard ditails={ditails}/>
-          <ApplicantCard ditails={ditails}/>
 
+        {applicants ? (
+
+          applicants.map((tender, index) =>(
+            <ApplicantCard 
+              applicant = {tender.applicant}
+              form = {tender.form}
+              title = {tender.title}
+              description = {tender.description}
+            />
+
+          ))
+
+          
+
+          ) : (
+            <div > </div>
+          )}
+         
         </div>
 
 <div className="h-36"></div>

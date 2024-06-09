@@ -13,30 +13,24 @@ import ApplicantCard from "../components/ApplicantsCard";
 //Start Code Function
 function MyTender({name,title,price,description}) {
 
-  const { getTenderById, getApplicantsByTender } = useContext(TenderAppContext);
+  const { getTenderById } = useContext(TenderAppContext);
   const [tender, setTender] = useState();
-  const [applicants, setApplicants] = useState();
 
   let { id } = useParams();
 
   useEffect(() => {
     console.log("id ", id);
 
-    getApplicantsByTender(ethers.BigNumber.from(id))
-      .then((value)=> {
-        setApplicants(value)
-      })
-      .catch((error)=> {
+    
 
-      })
-
-    getTenderById(ethers.BigNumber.from(id))
+      getTenderById(ethers.BigNumber.from(id))
       .then((value) => {
         setTender(value);
       })
       .catch((error) => {
 
       });
+    
 
  
   }, [id, getTenderById]);
