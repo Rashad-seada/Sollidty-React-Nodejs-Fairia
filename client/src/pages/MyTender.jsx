@@ -40,6 +40,7 @@ function MyTender({name,title,price,description}) {
 
  
   }, [id, getTenderById]);
+  
 
   useEffect(() => {
     if (tender) {
