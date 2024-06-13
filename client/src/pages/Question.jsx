@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import questions from '../data/Qustitions';
-
+import React, { useState } from "react";
+import questions from "../data/Qustitions";
+import { Link } from "react-router-dom";
 
 const QuestionForm = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showResult, setShowResult] = useState(null);
-
   // const questions = [
   //   {
   //     id: 1,
@@ -30,17 +29,16 @@ const QuestionForm = () => {
 
   const handleOptionChange = (questionId, value) => {
     setSelectedAnswer({ [questionId]: value });
-    console.log("selected  ",value)
+    console.log("selected  ", value);
   };
 
   const handleSubmit = () => {
     setShowResult(true);
   };
-
   const getScore = () => {
     let score = 0;
     questions.forEach((question) => {
-      if (selectedAnswer[question.id] + question.value ) {
+      if (selectedAnswer[question.id] + question.value) {
         score++;
       }
     });
@@ -49,49 +47,58 @@ const QuestionForm = () => {
 
   return (
     <div>
-      <div className='bg-primary text-xl '>
-        <p className='flex justify-center text-7xl pb-20  text-sky-400'>Qustions</p>
+      <div className="bg-primary text-xl ">
+        <p className="flex justify-center text-7xl pb-20  text-sky-400">
+          Qustions
+        </p>
         {questions.map((question) => (
-          <div
-          className='  pl-40'
-          style={{width:"100%"}}
-           key={question.id}>
-            <p className='text-white text-md' > {question.id} - {question.question}</p> 
+          <div className="  pl-40" style={{ width: "100%" }} key={question.id}>
+            <p className="text-white text-md">
+              {" "}
+              {question.id} - {question.question}
+            </p>
             {question.options.map((option) => (
-              <div className=' flex  mb-4 pl-6 pt-2 text-sky-500 '
-               key={option.value}>
-                <div >
+              <div
+                className=" flex  mb-4 pl-6 pt-2 text-sky-500 "
+                key={option.value}
+              >
+                <div>
                   <input
                     type="radio"
                     name={`question-${question.id}`}
                     value={option.value}
                     checked={selectedAnswer?.[question.id] === option.value}
-                    onChange={() => handleOptionChange(question.id, option.value)}
+                    onChange={() =>
+                      handleOptionChange(question.id, option.value)
+                    }
                   />
-                     <label className='pl-3'> 
-                      {option.label} 
-                      </label>
+                  <label className="pl-3">{option.label}</label>
                 </div>
-                <div >
-      </div>
-              </div>))}
+                <div></div>
+              </div>
+            ))}
           </div>
         ))}
-        {/* <button onClick={handleSubmit}>Submit</button>
+        <Link
+          className=" flex justify-center items-center bg-sky-400 p-1 text-lg  w-40 h-10 rounded-xl  text-black"
+          onClick={handleSubmit}
+        >
+          Submit
+        </Link>
+
         {showResult && (
           <div>
-            <p>Your score: {getScore()} / {questions.length}</p>
+            <p>
+              Your score: {getScore()} / {questions.length}
+            </p>
           </div>
-        )} */}
-        
+        )}
       </div>
     </div>
   );
 };
 
 export default QuestionForm;
-
-
 
 // function Questions() {
 
@@ -108,8 +115,6 @@ export default QuestionForm;
 //   const [Question11, setQuestion11] = useState('QuestionOne');
 //   const [Question12, setQuestion12] = useState('QuestionOne');
 //   const [Question13, setQuestion13] = useState('QuestionOne');
-
-
 
 //   const handleQuestion1 = (value) => {
 //     setQuestion1(event.target.value);
@@ -678,9 +683,6 @@ export default QuestionForm;
 //  }
 //  export default Questions;
 
-
-
-
 // import React, { useState } from 'react';
 // import Question from '../components/Question';
 
@@ -721,12 +723,3 @@ export default QuestionForm;
 // };
 
 // export default Questions;
-
-
-
-
-
-
-
-
-
