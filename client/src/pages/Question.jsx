@@ -52,7 +52,6 @@ const QuestionForm = () => {
       <div className='bg-primary text-xl '>
         <p className='flex justify-center text-7xl pb-20  text-sky-400'>Qustions</p>
         {questions.map((question) => (
-
           <div
           className='  pl-40'
           style={{width:"100%"}}
