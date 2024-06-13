@@ -1,36 +1,32 @@
 import React, { useState } from 'react';
-
+import questions from '../data/Qustitions';
 
 
 const QuestionForm = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [showResult, setShowResult] = useState(null);
 
-  const questions = [
-    {
-      id: 1,
-      question: 'What is the capital of France?',
-      options: [
-        { value: 'paris', label: 'Paris' },
-        { value: 'london', label: 'London' },
-        { value: 'berlin', label: 'Berlin' },
-        { value: 'madrid', label: 'Madrid' },
-      ],
-      correctAnswer: 'paris',
-    },
-    {
-      id: 2,
-      question: 'What is the largest ocean in the world?',
-      options: [
-        { value: 'atlantic', label: 'Atlantic Ocean' },
-        { value: 'pacific', label: 'Pacific Ocean' },
-        { value: 'indian', label: 'Indian Ocean' },
-        { value: 'arctic', label: 'Arctic Ocean' },
-      ],
-      correctAnswer: 'pacific',
-    },
-    // Add more questions as needed
-  ];
+  // const questions = [
+  //   {
+  //     id: 1,
+  //     question: 'Have you utilized relevant construction technologies (e.g., BIM, 3D printing, prefabrication technology  in previous projects?',
+  //     options: [
+  //       { value: 'Yes', label: 'Yes' },
+  //       { value: 'No', label: 'No' },
+  //     ],
+  //     correctAnswer: 'Yes',
+  //   },
+  //   {
+  //     id: 2,
+  //     question: 'Will you be developing a Work Breakdown Structure (WBS) for this project?',
+  //     options: [
+  //       { value: 'Yes', label: 'Yes' },
+  //       { value: 'No', label: 'No' },
+  //     ],
+  //     correctAnswer: 'pacific',
+  //   },
+  //   // Add more questions as needed
+  // ];
 
   const handleOptionChange = (questionId, value) => {
     setSelectedAnswer({ [questionId]: value });
@@ -44,7 +40,7 @@ const QuestionForm = () => {
   const getScore = () => {
     let score = 0;
     questions.forEach((question) => {
-      if (selectedAnswer[question.id] === question.correctAnswer) {
+      if (selectedAnswer[question.id] + question.value ) {
         score++;
       }
     });
@@ -53,31 +49,42 @@ const QuestionForm = () => {
 
   return (
     <div>
-      <h2>Quiz</h2>
-      {questions.map((question) => (
-        <div className='flex' key={question.id}>
-          <h3>{question.question}</h3>
-          {question.options.map((option) => (
-            <div key={option.value}>
-              <input
-                type="radio"
-                name={`question-${question.id}`}
-                value={option.value}
-                checked={selectedAnswer?.[question.id] === option.value}
-                onChange={() => handleOptionChange(question.id, option.value)}
-              />
-              <label>{option.label}</label>
-            </div>
-          ))}
-        </div>
-      ))}
-      <button onClick={handleSubmit}>Submit</button>
-      {showResult && (
-        <div>
-          <p>Your score: {getScore()} / {questions.length}</p>
-        </div>
-      )}
-      
+      <div className='bg-primary text-xl '>
+        <p className='flex justify-center text-7xl pb-20  text-sky-400'>Qustions</p>
+        {questions.map((question) => (
+          <div
+          className='  pl-40'
+          style={{width:"100%"}}
+           key={question.id}>
+            <p className='text-white text-md' > {question.id} - {question.question}</p> 
+            {question.options.map((option) => (
+              <div className=' flex  mb-4 pl-6 pt-2 text-sky-500 '
+               key={option.value}>
+                <div >
+                  <input
+                    type="radio"
+                    name={`question-${question.id}`}
+                    value={option.value}
+                    checked={selectedAnswer?.[question.id] === option.value}
+                    onChange={() => handleOptionChange(question.id, option.value)}
+                  />
+                     <label className='pl-3'> 
+                      {option.label} 
+                      </label>
+                </div>
+                <div >
+      </div>
+              </div>))}
+          </div>
+        ))}
+        {/* <button onClick={handleSubmit}>Submit</button>
+        {showResult && (
+          <div>
+            <p>Your score: {getScore()} / {questions.length}</p>
+          </div>
+        )} */}
+        
+      </div>
     </div>
   );
 };
