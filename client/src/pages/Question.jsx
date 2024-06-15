@@ -67,7 +67,7 @@ const QuestionForm = () => {
                     type="radio"
                     name={`question-${question.id}`}
                     value={option.value}
-                    checked={selectedAnswer?.[question.id] === option.value}
+                    // checked={selectedAnswer?.[question.id] === option.value}
                     onChange={() =>
                       handleOptionChange(question.id, option.value)
                     }
