@@ -114,7 +114,6 @@ const questions = [
           { value: '1', label: 'Yes' },
         { value: '2', label: 'No' },
         ],
-        correctAnswer: 'pacific',
       },{
         id: 17,
         question: 'Does your company utilize a documented project management methodology to ensure effective planning and control of projects?        ',
