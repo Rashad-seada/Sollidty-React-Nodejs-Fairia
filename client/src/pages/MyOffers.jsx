@@ -23,7 +23,10 @@ function MyOffers({ title, description }) {
   }, [getApplicantsByAuther]); // Add getApplicantsByAuther to dependency array if it's not static
 
   return (
-    <div className="main-container">
+    <div className="main-container bg-primary">
+       <div className="bg-primary" style={{fontSize:"80px"}}>
+          <p className=" font-semibold flex justify-center text-cyan-50   py-14"> My<span className="text-sky-400 px-3">Offers</span> </p>
+        </div>
       {applications.length === 0 ? (
         <NoOffers />
       ) : (
