@@ -14,6 +14,8 @@ function CreateTender() {
   const [ContractSign, setContractSign] = useState("");
   const [EstimatedProgect, setEstimatedProgect] = useState("");
   const [KeyWord, setKeyWord] = useState("");
+  const [Image, setImage] = useState("");
+
 
   const {
     createTender,
@@ -84,6 +86,11 @@ function CreateTender() {
     console.log(event.target.value);
   }
 
+function handelImage(event) {
+  setImage(event.target.value);
+    console.log(event.target.value);
+  }
+  
   return (
 
     <React.Fragment>
@@ -307,6 +314,25 @@ function CreateTender() {
                     </div>
                   </div>
                 </div>
+
+                <div className="mt-4">
+                  <div>
+                    <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
+                      <div className="flex justify-between">
+                        <label className="  text-xs font-medium text-muted-foreground group-focus-within:text-sky-500">
+                          upload
+                        </label>
+                        <input 
+                        value= {Image}
+                        onChange={handelImage}
+                        type="file"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
 
                 <div className="mt-4 pt-10 flex items-center justify-around  gap-x-2 animate-pulse">
                   <button
