@@ -168,6 +168,16 @@ const TenderAppProvider = ({ children }) => {
     }
   }
 
+  const getApplicantsByAuther = async ()=> {
+    if (ethereum) {
+
+      const tenderAppContract = getEthereumContract();
+
+      return await tenderAppContract.getApplicantsByAuther()
+
+    }
+  }
+
   const getGasPrice = async () => {
     try {
       // Get the current gas price
@@ -212,7 +222,7 @@ const TenderAppProvider = ({ children }) => {
           getTendersByAuthor,
           getTendersByApplicant,
           getApplicantsByTender,
-
+          getApplicantsByAuther,
           tendersByAuther,
           setTendersByAuther,
 
