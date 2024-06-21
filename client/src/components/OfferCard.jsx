@@ -24,7 +24,7 @@ function OfferCard({title,description} ) {
             <div className=" pl-20">
             </div>
            <div className=" pt-4 ">
-           <h1 className="pb-1 text-sky-400 pl-28 text-3xl"> {title} </h1>
+           <h1 className="pb-1 text-sky-400 pl-28 text-3xl"> {title} <span className='pl-36'><a> See More</a></span> </h1>
              <p className=" text-gray-400 pt-4 pl-32"> {description} </p>
            </div>
         </div>
