@@ -15,7 +15,7 @@ function OfferCard({title,description} ) {
         <div className=" text-3xl  relative w-20  h-20 overflow-hidden bg-secondary rounded-full ">
                     <img
                       src="https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg"
-                       className=" relative z-10 rounded-sm bg-sky-400 "
+                      className=" relative z-10 rounded-sm bg-sky-400 "
                       alt="Person-logo"
                     />
         </div>
