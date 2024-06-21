@@ -18,6 +18,7 @@ function MyTender({name,title,price,description}) {
 
   let { id } = useParams();
 
+  
   useEffect(() => {
     console.log("id ", id);
 
