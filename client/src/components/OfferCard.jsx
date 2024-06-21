@@ -10,8 +10,7 @@ function OfferCard({title,description} ) {
   return (
     <>
       <div className='bg-primary'>
-
-     <div className=' pb-44  pr-20 w-70% '>
+     <div className=' pb-10  pr-20 w-70% '>
       <div className="flex   ml-44 mt-20 bg-secon p-10  pb-24  bg-secondary rounded-2xl">
         <div className=" text-3xl  relative w-20  h-20 overflow-hidden bg-secondary rounded-full ">
                     <img
@@ -20,6 +19,7 @@ function OfferCard({title,description} ) {
                       alt="Person-logo"
                     />
         </div>
+
             <div >
             <div className=" pl-20">
             </div>
