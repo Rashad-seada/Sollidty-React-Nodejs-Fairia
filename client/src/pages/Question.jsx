@@ -35,7 +35,7 @@ const QuestionForm = () => {
     console.log("selected  ", value);
   };
 
-  
+
 
   // function handleOptionOne(event) {
   //   setSelectedAnswerOne(event.target.value);
