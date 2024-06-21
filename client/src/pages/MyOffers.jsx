@@ -23,17 +23,19 @@ function MyOffers({ title, description }) {
   }, [getApplicantsByAuther]); // Add getApplicantsByAuther to dependency array if it's not static
 
   return (
-    <div className="main-container bg-primary">
+    <div className="main-container  bg-primary">
        <div className="bg-primary" style={{fontSize:"80px"}}>
           <p className=" font-semibold flex justify-center text-cyan-50   py-14"> My<span className="text-sky-400 px-3">Offers</span> </p>
         </div>
       {applications.length === 0 ? (
         <NoOffers />
       ) : (
-        <div className="offers-list">
+        <div className="flex flex-col items-center offers-list">
           {applications.map((offer, index) => (
             <OfferCard key={index} title={offer.title} description={offer.description} />
           ))}
+
+          <div className="h-28"/>
         </div>
       )}
     </div>
