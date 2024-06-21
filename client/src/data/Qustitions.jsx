@@ -114,7 +114,6 @@ const questions = [
           { value: '1', label: 'Yes' },
         { value: '2', label: 'No' },
         ],
-        correctAnswer: 'pacific',
       },{
         id: 17,
         question: 'Does your company utilize a documented project management methodology to ensure effective planning and control of projects?        ',
@@ -152,15 +151,18 @@ const questions = [
         ],
       },
       
-      // Input Text
       {
         id: 22,
         question: 'What is your classification in the Egyptian Federation for Contractors for Construction and Building?        ',
         options: [
-          { value: '10', label: 'Input ext' },
-          { value: '5', label: 'InputText' },
+          { value: '1', label: 'first' },
+          { value: '2', label: 'second' },
+          { value: '3', label: 'third' },
+          { value: '4', label: 'fourth' },
+          { value: '5', label: 'fifth' },
+          { value: '6', label: 'sixth' },
+          { value: '7', label: 'seventh' },
         ],
-        correctAnswer: 'pacific',
       },{
         id: 23,
         question: 'Do they have a process for documenting and tracking all your fixed assets?        ',
@@ -390,19 +392,20 @@ const questions = [
           { value: '1', label: 'Yes' },
           { value: '2', label: 'No' },
         ],
-      },{
-        id: 52,
-        question: 'Could you provide the proposed price for this project?        ',
-        options: [
-          { value: 'Num', label: 'Num' },
-        ],
-      },{
-        id: 53,
-        question: 'What is the proposed duration for completing this project?        ',
-        options: [
-          { value: 'Num', label: 'Num' },
-        ],
       }
+      // ,{
+      //   id: 52,
+      //   question: 'Could you provide the proposed price for this project?        ',
+      //   options: [
+      //     { value: 'Num', label: 'Num' },
+      //   ],
+      // },{
+      //   id: 53,
+      //   question: 'What is the proposed duration for completing this project?        ',
+      //   options: [
+      //     { value: 'Num', label: 'Num' },
+      //   ],
+      // }
   ];
 
   export default questions
