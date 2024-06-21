@@ -62,7 +62,7 @@ const QuestionForm = () => {
 
   return (
     <div>
-      <div className="bg-primary text-xl ">
+      <div className="bg-primary text-xl pt-28 ">
         <p className="flex justify-center text-7xl pb-20  text-sky-400">
           Qustions
         </p>
