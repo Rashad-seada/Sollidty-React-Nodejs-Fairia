@@ -10,9 +10,7 @@ function OfferCard({title,description} ) {
   return (
     <>
       <div className='bg-primary'>
- <div style={{fontSize:"80px"}}>
-          <p className=" font-semibold flex justify-center text-cyan-50   py-14"> My<span className="text-sky-400 px-3">Offers</span> </p>
-        </div>
+
      <div className=' pb-44  pr-20 w-70% '>
       <div className="flex   ml-44 mt-20 bg-secon p-10  pb-24  bg-secondary rounded-2xl">
         <div className=" text-3xl  relative w-20  h-20 overflow-hidden bg-secondary rounded-full ">
