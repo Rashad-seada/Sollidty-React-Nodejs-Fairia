@@ -9,18 +9,25 @@ import { ethers } from "ethers";
 
 const SingleCard = ({ title, description, name, price,ditails }) => {
   const { id } = useParams();
-  console.log(id);
+
+  const tenderId = ethers.BigNumber.from(id);
+  console.log('tenderId = ' + tenderId);
+
 
   const [applicants, setApplicants] = useState();
   const { getApplicantsByTender } = useContext(TenderAppContext);
 
   useEffect(()=> {
-    getApplicantsByTender(ethers.BigNumber.from(id))
+    getApplicantsByTender(tenderId)
     .then((value)=> {
+      console.log("value = "+value)
       setApplicants(value)
+
     })
     .catch((error)=> {
+      const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
 
+      alert(error.message) 
     })
   },[])
 

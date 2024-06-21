@@ -1,50 +1,40 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react'
-import OfferCard from '../components/OfferCard'
-import {TenderAppContext} from"../context/TenderAppContext"
-import  { useContext  , useEffect,useState } from "react";// eslint-disable-next-line no-unused-vars
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBoxOpen } from '@fortawesome/free-solid-svg-icons';
+import React, { useContext, useEffect, useState } from "react";
+import OfferCard from "../components/OfferCard";
+import { TenderAppContext } from "../context/TenderAppContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBoxOpen } from "@fortawesome/free-solid-svg-icons";
 
-function MyOffers({title,description}) {
+function MyOffers({ title, description }) {
+  const [applications, setApplications] = useState([]);
 
+  const { getApplicantsByAuther } = useContext(TenderAppContext);
 
-  const [tenders,setTenders] = useState("");
-
-  const {
-    getTendersByApplicant
-  } = useContext(TenderAppContext);
-
-  useEffect(()=> {
-    getTendersByApplicant().then(
-      (value)=> {
-        setTenders(value)
-
-        console.log(value)
-    }).catch(
-      (error)=> {
-        const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
-        console.log(error);
-        alert(errorMessage);
-    })
-  },[])
+  useEffect(() => {
+    getApplicantsByAuther().then(
+      (value) => {
+        setApplications(value);
+        console.log("Updated applications:", value); // Log the updated value of applications
+      }).catch(
+        (error) => {
+          const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
+          console.error(errorMessage); // Log error message
+          alert(errorMessage); // Show alert with error message
+        });
+  }, [getApplicantsByAuther]); // Add getApplicantsByAuther to dependency array if it's not static
 
   return (
-
-<div className="main-container">
-      {tenders.length === 0  || tenders ? (
+    <div className="main-container">
+      {applications.length === 0 ? (
         <NoOffers />
       ) : (
         <div className="offers-list">
-          {tenders.map((offer, index) => (
-                  <OfferCard title= {title} description = {description} />
+          {applications.map((offer, index) => (
+            <OfferCard key={index} title={offer.title} description={offer.description} />
           ))}
         </div>
       )}
     </div>
-
-          
-  )
+  );
 }
 
 const NoOffers = () => {
@@ -57,4 +47,4 @@ const NoOffers = () => {
   );
 };
 
-export default MyOffers
+export default MyOffers;

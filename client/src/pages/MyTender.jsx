@@ -28,7 +28,10 @@ function MyTender({name,title,price,description}) {
         setTender(value);
       })
       .catch((error) => {
+        const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
 
+        alert(errorMessage)   
+        
       });
     
 

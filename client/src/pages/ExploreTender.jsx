@@ -15,7 +15,7 @@ function ExploreTender() {
     getAllTenders()
     .then((tenders)=> {
       setTenders(tenders)
-      console.log(tenders)
+      console.log(tenders.le)
     }).catch((error)=> {
       const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
 
