@@ -20,11 +20,12 @@ function OfferCard({title,description} ) {
                       alt="Person-logo"
                     />
         </div>
+
             <div >
             <div className=" pl-20">
             </div>
            <div className=" ">
-           <h1 className=" text-sky-400 pl-11 text-3xl"> {title} </h1>
+             <h1 className=" text-sky-400 pl-11 text-3xl"> {title} </h1>
              <p className=" text-gray-400 pt-4 pl-11"> {description} </p>
            </div>
         </div>
