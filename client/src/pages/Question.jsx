@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import questions from "../data/Qustitions";
 import { Link } from "react-router-dom";
 
 const QuestionForm = () => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [selectedAnswerOne, setSelectedAnswerOne] = useState("");
+    const [selectedAnswerTwo, setSelectedAnswerTwo] = useState("");
+
   const [showResult, setShowResult] = useState(null);
   // const questions = [
   //   {
@@ -31,6 +34,18 @@ const QuestionForm = () => {
     setSelectedAnswer({ [questionId]: value });
     console.log("selected  ", value);
   };
+
+  
+
+  // function handleOptionOne(event) {
+  //   setSelectedAnswerOne(event.target.value);
+  //   console.log("event.target.value");
+  // }
+
+  //   const handleOptionTwo= ( event) => {
+  //   setSelectedAnswerTwo(event.target.value);
+  //   console.log("selected  ", value);
+  // };
 
   const handleSubmit = () => {
     setShowResult(true);
@@ -74,17 +89,50 @@ const QuestionForm = () => {
                   />
                   <label className="pl-3">{option.label}</label>
                 </div>
-                <div></div>
+
+                
               </div>
             ))}
           </div>
         ))}
-        <Link
-          className=" flex justify-center items-center bg-sky-400 p-1 text-lg  w-40 h-10 rounded-xl  text-black"
-          onClick={handleSubmit}
-        >
-          Submit
-        </Link>
+        <div>
+
+          <div className="flex pb-9 text-white ">
+            <label className="  text-white pl-40 " >
+            52- What is the proposed duration for completing this project?   
+            </label>
+            <input 
+               value= {selectedAnswerOne}
+               // checked={selectedAnswer?.[question.id] === option.value}
+               onChange={
+                event => setSelectedAnswerOne(console.log(event.target.value),event.target.value)
+                
+               }
+            type="text" className="bg-secondary ml-5 border border-sky-400 rounded-md pl-3"  /> 
+              </div> 
+
+              <div className="flex pb-9 text-white ">
+            <label className="  text-white pl-40 " >
+            53- What is the proposed duration for completing this project?   
+            </label>
+            <input
+              value= {selectedAnswerTwo}
+               // checked={selectedAnswer?.[question.id] === option.value}
+               onChange={
+                event => setSelectedAnswerTwo(console.log(event.target.value),event.target.value)
+
+               } type="text" className="bg-secondary ml-5 border border-sky-400 rounded-md pl-3"  /> 
+              </div>
+
+               </div>
+        <div className=" flex justify-center items-center pt-24 pb-60  ">
+          <Link
+            className=" flex justify-center items-center bg-sky-400 p-1 text-lg  w-40 h-10 rounded-xl  text-black hover:bg-sky-500 hover:text-white"
+            onClick={handleSubmit}
+          >
+            Submit
+          </Link>
+        </div>
 
         {showResult && (
           <div>
