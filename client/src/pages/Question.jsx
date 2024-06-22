@@ -61,7 +61,7 @@ console.log("clicked")
     <div>
       <div className="bg-primary text-xl pt-28 ">
         <p className="flex justify-center text-7xl pb-20  text-sky-400">
-          Qustions
+          Questions
         </p>
         {questions.map((question) => (
           <div className="  pl-40" style={{ width: "100%" }} key={question.id}>

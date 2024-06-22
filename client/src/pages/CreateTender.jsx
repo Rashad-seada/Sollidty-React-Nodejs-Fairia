@@ -125,7 +125,7 @@ function handelImage(event) {
           <div className="mx-5 border dark:border-b-white/50 dark:border-t-white/50 border-b-white/20 sm:border-t-white/20 shadow-[20px_0_20px_20px] shadow-slate-500/10 dark:shadow-white/20 rounded-lg border-white/20 border-l-white/20 border-r-white/20 sm:shadow-sm lg:rounded-xl lg:shadow-none">
             <div className="text-sky-400 flex flex-col p-6 ">
               <h3 className=" text-xl font-semibold leading-6 tracking-tighter">
-                Create New Tunder
+                Create New Tender
               </h3>
               <p className="mt-1.5 text-sm font-medium text-sky-100">
                 Welcome back, enter your Tender.
@@ -235,7 +235,7 @@ function handelImage(event) {
                   <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
                     <div className="flex justify-between">
                       <label className="text-xs font-medium text-muted-foreground group-focus-within:text-sky-500 ">
-                        Bid Submiission Deadlind
+                        Bid submission deadline
                       </label>
                     </div>
                     <input
