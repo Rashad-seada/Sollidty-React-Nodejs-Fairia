@@ -264,40 +264,44 @@ contract TenderApp {
         return senderApplicants;
     }
 
-    // function completeApplication(
-    //     uint256 applicationId,
-    //     uint256[53] memory answers
-    // ) public {
-    //     require(applicationId < applicants.length, "Invalid applicant index");
-    //     require(!applicants[applicationId].isCompleted, "You already completed the application");
+    function completeApplication(uint256 tenderId, uint256[53] memory answers) public {
+        uint256 totalScore = 0;
+        bool applicantFound = false;
 
-    //     uint256 totalScore = 0;
+        for (uint256 i = 0; i < applicants.length; i++) {
+            if (applicants[i].tenderId == tenderId && applicants[i].applicant == msg.sender) {
+                require(!applicants[i].isCompleted, "You already completed the application");
 
-    //     for (uint256 i = 0; i < answers.length; i++) {
-    //         uint256 weight = getWeight(i + 1);
-    //         totalScore = totalScore + (answers[i] * weight) /(10);
-    //     }
+                for (uint256 j = 0; j < answers.length; j++) {
+                    uint256 weight = getWeight(j + 1);
+                    totalScore += (answers[j] * weight) / 10;
+                }
 
-    //     applicants[applicationId].isCompleted = true;
-    //     applicants[applicationId].totalScore = totalScore;
+                applicants[i].isCompleted = true;
+                applicants[i].totalScore = totalScore;
+                applicantFound = true;
+                break;
+            }
+        }
 
-    // }
+        require(applicantFound, "No application found for the given tender ID and sender");
+    }
 
-    // function getWeight(uint256 answerIndex) internal pure returns (uint256) {
-    //     if (answerIndex == 1 || answerIndex == 2 || answerIndex == 3 || answerIndex == 4 || answerIndex == 5 || answerIndex == 6 || answerIndex == 7 || answerIndex == 9 || answerIndex == 10 || answerIndex == 11 || answerIndex == 12 || answerIndex == 14 || answerIndex == 15 || answerIndex == 16 || answerIndex == 17 || answerIndex == 18 || answerIndex == 19 || answerIndex == 20 || answerIndex == 21 || answerIndex == 23 || answerIndex == 24 || answerIndex == 25 || answerIndex == 26 || answerIndex == 30 || answerIndex == 31 || answerIndex == 36 || answerIndex == 37 || answerIndex == 38 || answerIndex == 39 || answerIndex == 40 || answerIndex == 41 || answerIndex == 42) {
-    //         return 10;
-    //     } else if (answerIndex == 8) {
-    //         return 20;
-    //     } else if (answerIndex == 13 || answerIndex == 27 || answerIndex == 28 || answerIndex == 32 || answerIndex == 33 || answerIndex == 34 || answerIndex == 35) {
-    //         return 5;
-    //     } else if (answerIndex == 22 || answerIndex == 29) {
-    //         return 1;
-    //     } else if (answerIndex == 43 || answerIndex == 44 || answerIndex == 45 || answerIndex == 46 || answerIndex == 47 || answerIndex == 48 || answerIndex == 49 || answerIndex == 50 || answerIndex == 51 || answerIndex == 52 || answerIndex == 53) {
-    //         return 10;
-    //     } else {
-    //         return 0;
-    //     }
-    // }
+    function getWeight(uint256 answerIndex) internal pure returns (uint256) {
+        if (answerIndex == 1 || answerIndex == 2 || answerIndex == 3 || answerIndex == 4 || answerIndex == 5 || answerIndex == 6 || answerIndex == 7 || answerIndex == 9 || answerIndex == 10 || answerIndex == 11 || answerIndex == 12 || answerIndex == 14 || answerIndex == 15 || answerIndex == 16 || answerIndex == 17 || answerIndex == 18 || answerIndex == 19 || answerIndex == 20 || answerIndex == 21 || answerIndex == 23 || answerIndex == 24 || answerIndex == 25 || answerIndex == 26 || answerIndex == 30 || answerIndex == 31 || answerIndex == 36 || answerIndex == 37 || answerIndex == 38 || answerIndex == 39 || answerIndex == 40 || answerIndex == 41 || answerIndex == 42) {
+            return 10;
+        } else if (answerIndex == 8) {
+            return 20;
+        } else if (answerIndex == 13 || answerIndex == 27 || answerIndex == 28 || answerIndex == 32 || answerIndex == 33 || answerIndex == 34 || answerIndex == 35) {
+            return 5;
+        } else if (answerIndex == 22 || answerIndex == 29) {
+            return 1;
+        } else if (answerIndex == 43 || answerIndex == 44 || answerIndex == 45 || answerIndex == 46 || answerIndex == 47 || answerIndex == 48 || answerIndex == 49 || answerIndex == 50 || answerIndex == 51 || answerIndex == 52 || answerIndex == 53) {
+            return 10;
+        } else {
+            return 0;
+        }
+    }
 
     
 }
