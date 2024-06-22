@@ -7,7 +7,7 @@ import ApplicantCard from "./ApplicantsCard";
 import { ethers } from "ethers";
 
 
-const SingleCard = ({ title, description, name, price,ditails }) => {
+const SingleCard = ({ title, description, name, price }) => {
   const { id } = useParams();
 
   const tenderId = ethers.BigNumber.from(id);
@@ -105,13 +105,13 @@ const SingleCard = ({ title, description, name, price,ditails }) => {
         <div >
 
         {applicants ? (
-
           applicants.map((tender, index) =>(
             <ApplicantCard 
               applicant = {tender.applicant}
               form = {tender.form}
               title = {tender.title}
               description = {tender.description}
+              totalScore ={parseInt(tender.totalScore)}
             />
 
           ))

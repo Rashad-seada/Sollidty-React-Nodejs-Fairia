@@ -32,7 +32,7 @@ function MyOffers({ title, description }) {
       ) : (
         <div className="flex flex-col items-center offers-list">
           {applications.map((offer, index) => (
-            <OfferCard key={index} title={offer.title} description={offer.description} />
+            <OfferCard Id={offer.tenderId} title={offer.title} description={offer.description} />
           ))}
 
           <div className="h-28"/>
