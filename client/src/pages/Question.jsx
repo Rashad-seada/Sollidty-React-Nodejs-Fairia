@@ -32,7 +32,7 @@ const QuestionForm = () => {
 
   const handleSubmit = () => {
     event.preventDefault(); // Prevent the default form submission behavior
-
+console.log("clicked")
     completeApplication(id, selectedAnswer.map((awnser, index)=> { return ethers.BigNumber.from(awnser)}))
     .then((value=> {
       console.log("value  ", value);
