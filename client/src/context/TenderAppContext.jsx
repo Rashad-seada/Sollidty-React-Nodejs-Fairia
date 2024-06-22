@@ -203,6 +203,16 @@ const TenderAppProvider = ({ children }) => {
     }
   };
 
+  const completeApplication = async(tenderId, awnsers)=> {
+    if (ethereum) {
+
+      const tenderAppContract = getEthereumContract();
+
+      return await tenderAppContract.completeApplication(tenderId, awnsers)
+
+    }
+  }
+
   useEffect( () => {
     checkIfTheWalletIsConnected();
 
@@ -228,7 +238,7 @@ const TenderAppProvider = ({ children }) => {
 
           tendersByApplicant,
           setTendersByApplicant,
-
+          completeApplication,
           tender,
           setTender,
           estimateGas,
