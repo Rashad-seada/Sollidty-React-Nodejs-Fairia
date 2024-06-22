@@ -19,7 +19,7 @@ function ApplicantCard({
                       alt=""
                     />
         </div>
-            <div 
+            <div
             style={{width:"100%"}}>
             <div className=" pl-10">
                 <p className="pb-1 text-gray-600"> {applicant}</p>

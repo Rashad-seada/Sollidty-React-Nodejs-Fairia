@@ -230,6 +230,7 @@ const questions = [
         options: [
           { value: '1', label: 'Yes' },
         { value: '2', label: 'No' },
+
         ],
       },
 
@@ -238,16 +239,20 @@ const questions = [
         id: 32,
         question: 'What is the number of similar projects your company has executed?        ',
         options: [
-          { value: 'inputt', label: 'inputt' },
-          { value: 'input', label: 'input' },
+          { value: '1', label: 'High' },
+          { value: '2', label: 'Limit' },
+          { value: '3', label: 'Low' },
+
         ],
       },
       {
         id: 33,
         question: 'What is the number of years of experience your company has in construction?        ',
         options: [
-          { value: 'inputt', label: 'input' },
-          { value: 'input', label: 'input' },
+          { value: '1', label: 'High' },
+          { value: '2', label: 'Limit' },
+          { value: '3', label: 'Low' },
+
         ],
       },
       {
