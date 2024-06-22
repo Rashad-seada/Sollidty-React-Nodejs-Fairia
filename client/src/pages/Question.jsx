@@ -39,7 +39,8 @@ const QuestionForm = () => {
 
     }))
     .catch((error)=> {
-      console.log("error  ", error.message);
+      const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
+      alert(errorMessage);
 
     });
     

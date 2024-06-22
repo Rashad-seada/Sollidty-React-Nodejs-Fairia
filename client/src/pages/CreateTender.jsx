@@ -254,15 +254,15 @@ function handelImage(event) {
                   <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
                     <div className="flex justify-between">
                       <label className="text-xs font-medium text-muted-foreground group-focus-within:text-sky-500 ">
-                        Contract sign Deadline
+                        Bill of Quantity (BOQ)
                       </label>
                     </div>
                     <input
                       value={ContractSign}
                       onChange={handelContractSignValue}
-                      type="date"
+                      type="text"
                       name="Title"
-                      placeholder="Enter Contract Sign"
+                      placeholder="Enter Bill of Quantity"
                       className="     w-full border-0 bg-transparent p-0 text-sm file:my-1 placeholder:text-muted-foreground/90 focus:outline-none focus:ring-0 focus:ring-teal-500 sm:leading-7 text-foreground"
                       style={{ backgroundColor: "#0000" }}
                     />
@@ -317,7 +317,8 @@ function handelImage(event) {
 
                 <div className="mt-4">
                   <div>
-                    <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
+                    <div 
+                    className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
                       <div className="flex justify-between">
                         <label className="  text-xs font-medium text-muted-foreground group-focus-within:text-sky-500">
                           upload
@@ -332,6 +333,92 @@ function handelImage(event) {
                   </div>
                 </div>
 
+              
+                <div className="mt-4">
+                  <div>
+                    <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
+                      <div className="flex justify-between">
+                        <label className="  text-xs font-medium text-muted-foreground group-focus-within:text-sky-500">
+                          The Appropriate Classification 
+                        </label>
+                      </div>
+                      <div className="flex items-center">
+      <div className="flex space-x-3">
+        <div className="flex items-center">
+          <input
+            //onChange={handelKeyWordValue}
+            type="radio"
+            name="Location"
+            value="1"
+            className="bg-transparent text-foreground focus:ring-teal-500"
+          />
+          <label className="pl-1">1</label>
+        </div>
+        <div className="flex items-center">
+          <input
+            //onChange={handelKeyWordValue}
+            type="radio"
+            name="Location"
+            value="2"
+            className="bg-transparent text-foreground focus:ring-teal-500"
+          />
+          <label className="pl-1">2</label>
+        </div>
+        <div className="flex items-center">
+          <input
+            //onChange={handelKeyWordValue}
+            type="radio"
+            name="Location"
+            value="3"
+            className="bg-transparent text-foreground focus:ring-teal-500"
+          />
+          <label className="pl-1">3</label>
+        </div>
+        <div className="flex items-center">
+          <input
+            //onChange={handelKeyWordValue}
+            type="radio"
+            name="Location"
+            value="4"
+            className="bg-transparent text-foreground focus:ring-teal-500"
+          />
+          <label className="pl-1">4</label>
+        </div>
+        <div className="flex items-center">
+          <input
+            //onChange={handelKeyWordValue}
+            type="radio"
+            name="Location"
+            value="5"
+            className="bg-transparent text-foreground focus:ring-teal-500"
+          />
+          <label className="pl-1">5</label>
+        </div>
+        <div className="flex items-center">
+          <input
+            //onChange={handelKeyWordValue}
+            type="radio"
+            name="Location"
+            value="6"
+            className="bg-transparent text-foreground focus:ring-teal-500"
+          />
+          <label className="pl-1">6</label>
+        </div>
+        <div className="flex items-center">
+          <input
+            //onChange={handelKeyWordValue}
+            type="radio"
+            name="Location"
+            value="7"
+            className="bg-transparent text-foreground focus:ring-teal-500"
+          />
+          <label className="pl-1">7</label>
+        </div>
+      </div>
+    </div>
+                    </div>
+                  </div>
+                </div>
 
 
                 <div className="mt-4 pt-10 flex items-center justify-around  gap-x-2 animate-pulse">
