@@ -270,7 +270,7 @@ contract TenderApp {
 
         for (uint256 i = 0; i < applicants.length; i++) {
             if (applicants[i].tenderId == tenderId && applicants[i].applicant == msg.sender) {
-                require(!applicants[i].isCompleted, "You already completed the application");
+                //require(!applicants[i].isCompleted, "You already completed the application");
 
                 for (uint256 j = 0; j < answers.length; j++) {
                     uint256 weight = getWeight(j + 1);
