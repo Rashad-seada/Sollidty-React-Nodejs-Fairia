@@ -95,7 +95,7 @@ console.log("clicked")
 
           <div className="flex pb-9 text-white ">
             <label className="  text-white pl-40 " >
-            52- What is the proposed duration for completing this project?   
+            52- Could you provide the proposed price for this project?    
             </label>
             <input 
                value= {selectedAnswerOne}
