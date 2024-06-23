@@ -150,11 +150,11 @@ contract TenderApp {
        
 
         // Check if the user has already applied to this tender
-        for (uint256 i = 0; i < applicants.length; i++) {
-            if (applicants[i].tenderId == tenderIndex && applicants[i].applicant == msg.sender) {
-                revert("You have already applied to this tender");
-            }
-        }
+        // for (uint256 i = 0; i < applicants.length; i++) {
+        //     if (applicants[i].tenderId == tenderIndex && applicants[i].applicant == msg.sender) {
+        //         revert("You have already applied to this tender");
+        //     }
+        // }
 
         applicants.push(Applicants(
             tenderIndex,
