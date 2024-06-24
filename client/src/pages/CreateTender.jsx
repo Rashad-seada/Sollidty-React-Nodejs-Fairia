@@ -249,7 +249,7 @@ function handelImage(event) {
                     />
                   </div>
                 </div>
-
+{/* 
                 <div className="mt-4">
                   <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
                     <div className="flex justify-between">
@@ -267,7 +267,7 @@ function handelImage(event) {
                       style={{ backgroundColor: "#0000" }}
                     />
                   </div>
-                </div>
+                </div> */}
 
                 <div className="mt-4">
                   <div>

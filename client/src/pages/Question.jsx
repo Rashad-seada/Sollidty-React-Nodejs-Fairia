@@ -96,7 +96,7 @@ console.log("clicked")
 
           <div className="flex pb-9 text-white ">
             <label className="  text-white pl-40 " >
-            52- What is the proposed duration for completing this project?   
+            52- Could you provide the proposed price for this project?    
             </label>
             <input 
                value= {selectedAnswerOne}
@@ -105,7 +105,7 @@ console.log("clicked")
                 event => setSelectedAnswerOne(console.log(event.target.value),event.target.value)
                 
                }
-            type="text" className="bg-secondary ml-5 border border-sky-400 rounded-md pl-3"  /> 
+            type="number" className="bg-secondary ml-5 border border-sky-400 rounded-md pl-3"  /> 
               </div> 
 
               <div className="flex pb-9 text-white ">
@@ -118,7 +118,7 @@ console.log("clicked")
                onChange={
                 event => setSelectedAnswerTwo(console.log(event.target.value),event.target.value)
 
-               } type="text" className="bg-secondary ml-5 border border-sky-400 rounded-md pl-3"  /> 
+               } type="date" className="bg-secondary ml-5 border border-sky-400 rounded-md pl-3"  /> 
               </div>
 
                </div>
