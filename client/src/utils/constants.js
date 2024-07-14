@@ -1,4 +1,4 @@
 import abi from './TenderApp.json'
 
 export const contractABI = abi.abi;
-export const contractAddress = "0x84f3918366183Daad16d95F3B4C2b413F7F44678";
+export const contractAddress = "0xf1365364fd945f1c1e024C1d677eE8f6d8452Cd7";
