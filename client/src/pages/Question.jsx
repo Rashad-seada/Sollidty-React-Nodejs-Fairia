@@ -92,8 +92,8 @@ console.log("clicked")
             ))}
           </div>
         ))}
-        <div>
 
+        <div>
           <div className="flex pb-9 text-white ">
             <label className="  text-white pl-40 " >
             52- Could you provide the proposed price for this project?    
@@ -103,11 +103,9 @@ console.log("clicked")
                // checked={selectedAnswer?.[question.id] === option.value}
                onChange={
                 event => setSelectedAnswerOne(console.log(event.target.value),event.target.value)
-                
                }
             type="number" className="bg-secondary ml-5 border border-sky-400 rounded-md pl-3"  /> 
               </div> 
-
               <div className="flex pb-9 text-white ">
             <label className="  text-white pl-40 " >
             53- What is the proposed duration for completing this project?   
@@ -117,11 +115,37 @@ console.log("clicked")
                // checked={selectedAnswer?.[question.id] === option.value}
                onChange={
                 event => setSelectedAnswerTwo(console.log(event.target.value),event.target.value)
-
                } type="date" className="bg-secondary ml-5 border border-sky-400 rounded-md pl-3"  /> 
               </div>
-
                </div>
+
+               <div>
+          <div className="flex pb-9 text-white ">
+            <label className="  text-white pl-40 " >
+            53- Could you provide the proposed price for this project?    
+            </label>
+            <input 
+               value= {selectedAnswerOne}
+               // checked={selectedAnswer?.[question.id] === option.value}
+               onChange={
+                event => setSelectedAnswerOne(console.log(event.target.value),event.target.value)
+               }
+            type="number" className="bg-secondary ml-5 border border-sky-400 rounded-md pl-3"  /> 
+              </div> 
+              <div className="flex pb-9 text-white ">
+            <label className="  text-white pl-40 " >
+            54- What is the proposed duration for completing this project?   
+            </label>
+            <input
+              value= {selectedAnswerTwo}
+               // checked={selectedAnswer?.[question.id] === option.value}
+               onChange={
+                event => setSelectedAnswerTwo(console.log(event.target.value),event.target.value)
+               } type="number" cl6assName="bg-secondary ml-5 border border-sky-400 rounded-md pl-3"  /> 
+              </div>
+               </div>
+
+
         <div className=" flex justify-center items-center pt-24 pb-60  ">
           <Link
             className=" flex justify-center items-center bg-sky-400 p-1 text-lg  w-40 h-10 rounded-xl  text-black hover:bg-sky-500 hover:text-white"

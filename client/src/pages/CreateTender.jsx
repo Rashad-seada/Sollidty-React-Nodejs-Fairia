@@ -15,7 +15,9 @@ function CreateTender() {
   const [EstimatedProgect, setEstimatedProgect] = useState("");
   const [KeyWord, setKeyWord] = useState("");
   const [Image, setImage] = useState("");
-
+const [expected,setprice]=useState("")
+const [duration,setduration]=useState("")
+const [Present,setPresent]=useState("")
 
   const {
     createTender,
@@ -73,12 +75,25 @@ function CreateTender() {
     setBidSubmission(event.target.value);
     console.log(event.target.value);
   }
-  function handelContractSignValue(event) {
-    setContractSign(event.target.value);
+  function handelEstimatedProgectValue(event) {
+
+    function handelContractSignValue(event) {
+      setContractSign(event.target.value);
+      console.log(event.target.value);
+    }
+    setEstimatedProgect(event.target.value);
     console.log(event.target.value);
   }
-  function handelEstimatedProgectValue(event) {
-    setEstimatedProgect(event.target.value);
+  function handelprice(event) {
+    setprice(event.target.value);
+    console.log(event.target.value);
+  }
+  function handelduration(event) {
+    setduration(event.target.value);
+    console.log(event.target.value);
+  }
+  function handelPresent(event) {
+    setPresent(event.target.value);
     console.log(event.target.value);
   }
   function handelKeyWordValue(event) {
@@ -216,7 +231,7 @@ function handelImage(event) {
                   <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
                     <div className="flex justify-between">
                       <label className="text-xs font-medium text-muted-foreground group-focus-within:text-sky-500 ">
-                        prequalification Deadline 
+                        pre-qualification Deadline 
                       </label>
                     </div>
                     <input
@@ -249,7 +264,7 @@ function handelImage(event) {
                     />
                   </div>
                 </div>
-{/* 
+
                 <div className="mt-4">
                   <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
                     <div className="flex justify-between">
@@ -260,14 +275,14 @@ function handelImage(event) {
                     <input
                       value={ContractSign}
                       onChange={handelContractSignValue}
-                      type="text"
+                      type="file"
                       name="Title"
                       placeholder="Enter Bill of Quantity"
                       className="     w-full border-0 bg-transparent p-0 text-sm file:my-1 placeholder:text-muted-foreground/90 focus:outline-none focus:ring-0 focus:ring-teal-500 sm:leading-7 text-foreground"
                       style={{ backgroundColor: "#0000" }}
                     />
                   </div>
-                </div> */}
+                </div>
 
                 <div className="mt-4">
                   <div>
@@ -321,7 +336,7 @@ function handelImage(event) {
                     className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
                       <div className="flex justify-between">
                         <label className="  text-xs font-medium text-muted-foreground group-focus-within:text-sky-500">
-                          upload
+                          Project drawing
                         </label>
                         <input 
                         value= {Image}
@@ -333,15 +348,75 @@ function handelImage(event) {
                   </div>
                 </div>
 
-              
+{/*
+N
+E
+W
+*/}
+                <div className="mt-4">
+                  <div>
+                    <div 
+                    className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
+                      <div className="flex justify-between">
+                        <label className="  text-xs font-medium text-muted-foreground group-focus-within:text-sky-500">
+                          Expected price
+                        </label>
+                        <input 
+                        value= {expected}
+                        onChange={handelprice}
+                        type="number"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-4">
+                  <div>
+                    <div 
+                    className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
+                      <div className="flex justify-between">
+                        <label className="  text-xs font-medium text-muted-foreground group-focus-within:text-sky-500">
+                          Expected duration
+                        </label>
+                        <input 
+                        value= {duration}
+                        onChange={handelduration}
+                        type="number"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-4">
+                  <div>
+                    <div
+                    className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
+                      <div className="flex justify-between">
+                        <label className="  text-xs font-medium text-muted-foreground group-focus-within:text-sky-500">
+                          Expected Net Present Value
+                        </label>
+                        <input 
+                        value= {Present}
+                        onChange={handelPresent}
+                        type="number"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
                 <div className="mt-4">
                   <div>
                     <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
                       <div className="flex justify-between">
                         <label className="  text-xs font-medium text-muted-foreground group-focus-within:text-sky-500">
-                          The Appropriate Classification 
+                          The require Classification 
                         </label>
                       </div>
+
+
                       <div className="flex items-center">
       <div className="flex space-x-3">
         <div className="flex items-center">
