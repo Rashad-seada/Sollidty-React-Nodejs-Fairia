@@ -8,7 +8,7 @@ contract TenderApp {
     event Announce();
     
     struct Applicants {
-        // uint256 id; // Unique identifier for the tender
+        uint256 id; // Unique identifier for the tender
         uint256 tenderId; // Unique identifier for the tender
         address applicant;
         string form;
@@ -39,6 +39,7 @@ contract TenderApp {
 
     uint256 private latestIndex;
     uint256 private latestApplicationsIndex;
+
 
     constructor() {
         latestIndex = 0;
@@ -157,6 +158,7 @@ contract TenderApp {
         // }
 
         applicants.push(Applicants(
+            latestApplicationsIndex,
             tenderIndex,
             msg.sender,
             form,
@@ -166,7 +168,7 @@ contract TenderApp {
             0
         ));
 
-        
+        latestApplicationsIndex = latestApplicationsIndex + 1;
     }
 
     function getApplicantsByTender(uint256 tenderId) public view returns (Applicants[] memory) {
@@ -264,13 +266,13 @@ contract TenderApp {
         return senderApplicants;
     }
 
-    function completeApplication(uint256 tenderId, uint256[53] memory answers) public {
+    function completeApplication(uint256 applicantId, uint256[53] memory answers) public {
         uint256 totalScore = 0;
         bool applicantFound = false;
 
         for (uint256 i = 0; i < applicants.length; i++) {
-            if (applicants[i].tenderId == tenderId && applicants[i].applicant == msg.sender) {
-                //require(!applicants[i].isCompleted, "You already completed the application");
+            if (applicants[i].id == applicantId && applicants[i].applicant == msg.sender) {
+                require(!applicants[i].isCompleted, "Application already completed");
 
                 for (uint256 j = 0; j < answers.length; j++) {
                     uint256 weight = getWeight(j + 1);
@@ -284,8 +286,9 @@ contract TenderApp {
             }
         }
 
-        require(applicantFound, "No application found for the given tender ID and sender");
+        require(applicantFound, "No application found for the given applicant ID and sender");
     }
+
 
     function getWeight(uint256 answerIndex) internal pure returns (uint256) {
         if (answerIndex == 1 || answerIndex == 2 || answerIndex == 3 || answerIndex == 4 || answerIndex == 5 || answerIndex == 6 || answerIndex == 7 || answerIndex == 9 || answerIndex == 10 || answerIndex == 11 || answerIndex == 12 || answerIndex == 14 || answerIndex == 15 || answerIndex == 16 || answerIndex == 17 || answerIndex == 18 || answerIndex == 19 || answerIndex == 20 || answerIndex == 21 || answerIndex == 23 || answerIndex == 24 || answerIndex == 25 || answerIndex == 26 || answerIndex == 30 || answerIndex == 31 || answerIndex == 36 || answerIndex == 37 || answerIndex == 38 || answerIndex == 39 || answerIndex == 40 || answerIndex == 41 || answerIndex == 42) {
