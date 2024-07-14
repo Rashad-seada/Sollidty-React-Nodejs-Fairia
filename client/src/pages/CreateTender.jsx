@@ -1,10 +1,9 @@
-import React, { useContext ,  useState } from "react";// eslint-disable-next-line no-unused-vars
+import React, { useContext, useState } from "react"; // eslint-disable-next-line no-unused-vars
 import NavBar from "../components/NavBar";
-import {TenderAppContext} from"../context/TenderAppContext"
-import { ethers } from "ethers" ;
+import { TenderAppContext } from "../context/TenderAppContext";
+import { ethers } from "ethers";
 
 function CreateTender() {
-
   const [From, setFrom] = useState("");
   const [Title, setTitle] = useState("");
   const [Description, setDescription] = useState("");
@@ -15,24 +14,27 @@ function CreateTender() {
   const [EstimatedProgect, setEstimatedProgect] = useState("");
   const [KeyWord, setKeyWord] = useState("");
   const [Image, setImage] = useState("");
-const [expected,setprice]=useState("")
-const [duration,setduration]=useState("")
-const [Present,setPresent]=useState("")
-
-  const {
-    createTender,
-  } = useContext(TenderAppContext);
+  const [Price, setprice] = useState("");
+  const [duration, setduration] = useState("");
+  const [Present, setPresent] = useState("");
+  const [Quantity, setQuantity] = useState("");
+  // const[Classification,setClassification]=useState("")
+  const { createTender } = useContext(TenderAppContext);
 
   //ethers.utils.formatBytes32String("Another Bid Bond")
 
-  async function onSubmit(){
+  async function onSubmit() {
     try {
       // Convert strings to numbers where necessary
-      const prequalificationDeadline = ethers.utils.formatBytes32String(prequalification);
-      const bidSubmissionDeadline = ethers.utils.formatBytes32String(BidSubmission);
-      const contractSignDeadline = ethers.utils.formatBytes32String(ContractSign);
-      const estimatedProjectCost = ethers.utils.formatBytes32String(EstimatedProgect);
-  
+      const prequalificationDeadline =
+        ethers.utils.formatBytes32String(prequalification);
+      const bidSubmissionDeadline =
+        ethers.utils.formatBytes32String(BidSubmission);
+      const contractSignDeadline =
+        ethers.utils.formatBytes32String(ContractSign);
+      const estimatedProjectCost =
+        ethers.utils.formatBytes32String(EstimatedProgect);
+
       // Call createTender function with the converted parameters
       await createTender(
         From,
@@ -45,11 +47,13 @@ const [Present,setPresent]=useState("")
         estimatedProjectCost,
         KeyWord
       );
-    } catch(error) {
-      const errorMessage = error.reason ? error.reason : "An error occurred. Please try again later.";
+    } catch (error) {
+      const errorMessage = error.reason
+        ? error.reason
+        : "An error occurred. Please try again later.";
 
-      alert(errorMessage)
-     }
+      alert(errorMessage);
+    }
   }
   function handelFormValue(event) {
     setFrom(event.target.value);
@@ -76,7 +80,6 @@ const [Present,setPresent]=useState("")
     console.log(event.target.value);
   }
   function handelEstimatedProgectValue(event) {
-
     function handelContractSignValue(event) {
       setContractSign(event.target.value);
       console.log(event.target.value);
@@ -101,17 +104,26 @@ const [Present,setPresent]=useState("")
     console.log(event.target.value);
   }
 
-function handelImage(event) {
-  setImage(event.target.value);
+  function handelImage(event) {
+    setImage(event.target.value);
     console.log(event.target.value);
   }
-  
-  return (
 
+  function handelQuantity(event) {
+    setQuantity(event.target.value);
+    console.log(event.target.value);
+  }
+
+  // function handelClassification(event) {
+  //   setClassification(event.target.value);
+  //     console.log(event.target.value);
+  //   }
+  return (
     <React.Fragment>
-      <div 
-      onSubmit={e => e.preventDefault()}
-      className="bg-slate-950  text-sky-400 flex min-h-screen w-80% flex-col items-center pt-16  sm:justify-center sm:pt-0">
+      <div
+        onSubmit={(e) => e.preventDefault()}
+        className="bg-slate-950  text-sky-400 flex min-h-screen w-80% flex-col items-center pt-16  sm:justify-center sm:pt-0"
+      >
         <a href="#">
           <div className="text-foreground font-semibold text-2xl tracking-tighter mx-auto flex items-center gap-2">
             <div className="text-slate-50 ">
@@ -130,9 +142,12 @@ function handelImage(event) {
                 />
               </svg>
             </div>
-            <div style={{fontSize:"80px"}}>
-          <p className="bg-slate-950 font-semibold flex justify-center py-20 text-cyan-50"> Create<span className="text-sky-400 px-3">Tender</span> </p>
-        </div>
+            <div style={{ fontSize: "80px" }}>
+              <p className="bg-slate-950 font-semibold flex justify-center py-20 text-cyan-50">
+                {" "}
+                Create<span className="text-sky-400 px-3">Tender</span>{" "}
+              </p>
+            </div>
           </div>
         </a>
         <div className="relative mt-12 pb-20 w-full max-w-4xl sm:mt-10 ">
@@ -149,12 +164,11 @@ function handelImage(event) {
             <div className="p-6 pt-0">
               <form action="">
                 <div>
-
                   <div className="mt-4">
                     <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
                       <div className="flex justify-between">
                         <label className="text-xs font-medium text-muted-foreground group-focus-within:text-sky-500 ">
-                          From 
+                          From
                         </label>
                       </div>
                       <input
@@ -231,7 +245,7 @@ function handelImage(event) {
                   <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
                     <div className="flex justify-between">
                       <label className="text-xs font-medium text-muted-foreground group-focus-within:text-sky-500 ">
-                        pre-qualification Deadline 
+                        pre-qualification Deadline
                       </label>
                     </div>
                     <input
@@ -265,22 +279,21 @@ function handelImage(event) {
                   </div>
                 </div>
 
+               
                 <div className="mt-4">
-                  <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
-                    <div className="flex justify-between">
-                      <label className="text-xs font-medium text-muted-foreground group-focus-within:text-sky-500 ">
+                  <div>
+                    <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
+                      <div className="flex justify-between">
+                        <label className="  text-xs font-medium text-muted-foreground group-focus-within:text-sky-500">
                         Bill of Quantity (BOQ)
-                      </label>
+                        </label>
+                        <input
+                          value={Quantity}
+                          onChange={handelQuantity}
+                          type="file"
+                        />
+                      </div>
                     </div>
-                    <input
-                      value={ContractSign}
-                      onChange={handelContractSignValue}
-                      type="file"
-                      name="Title"
-                      placeholder="Enter Bill of Quantity"
-                      className="     w-full border-0 bg-transparent p-0 text-sm file:my-1 placeholder:text-muted-foreground/90 focus:outline-none focus:ring-0 focus:ring-teal-500 sm:leading-7 text-foreground"
-                      style={{ backgroundColor: "#0000" }}
-                    />
                   </div>
                 </div>
 
@@ -322,8 +335,7 @@ function handelImage(event) {
                           type="text"
                           name="Location"
                           placeholder=" Key-word Help to find Tender"
-                          className="block w-full border-0 bg-transparent p-0 text-sm file:my-1 placeholder:text-muted-foreground/90 focus:outline-none focus:ring-0 focus:ring-teal-500 sm:leading-7 text-foreground"
-                          style={{ backgroundColor: "#0000" }}
+                          className=" bg-secondary block w-full border-0 bg-transparent p-0 text-sm file:my-1 placeholder:text-muted-foreground/90 focus:outline-none focus:ring-0 focus:ring-teal-500 sm:leading-7 text-foreground"
                         />
                       </div>
                     </div>
@@ -332,22 +344,20 @@ function handelImage(event) {
 
                 <div className="mt-4">
                   <div>
-                    <div 
-                    className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
+                    <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
                       <div className="flex justify-between">
                         <label className="  text-xs font-medium text-muted-foreground group-focus-within:text-sky-500">
                           Project drawing
                         </label>
-                        <input 
-                        value= {Image}
-                        onChange={handelImage}
-                        type="file"
+                        <input
+                          value={Image}
+                          onChange={handelImage}
+                          type="file"
                         />
                       </div>
                     </div>
                   </div>
                 </div>
-
 {/*
 N
 E
@@ -355,150 +365,61 @@ W
 */}
                 <div className="mt-4">
                   <div>
-                    <div 
-                    className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
+                    <div className="group  relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
                       <div className="flex justify-between">
                         <label className="  text-xs font-medium text-muted-foreground group-focus-within:text-sky-500">
                           Expected price
                         </label>
-                        <input 
-                        value= {expected}
-                        onChange={handelprice}
-                        type="number"
+                        <input
+                          className="bg-secondary w-72  border border-sky-300"
+                          value={Price}
+                          onChange={handelprice}
+                          type="number"
                         />
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <div className="mt-4">
-                  <div>
-                    <div 
-                    className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
-                      <div className="flex justify-between">
-                        <label className="  text-xs font-medium text-muted-foreground group-focus-within:text-sky-500">
-                          Expected duration
-                        </label>
-                        <input 
-                        value= {duration}
-                        onChange={handelduration}
-                        type="number"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <div>
-                    <div
-                    className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
-                      <div className="flex justify-between">
-                        <label className="  text-xs font-medium text-muted-foreground group-focus-within:text-sky-500">
-                          Expected Net Present Value
-                        </label>
-                        <input 
-                        value= {Present}
-                        onChange={handelPresent}
-                        type="number"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
 
                 <div className="mt-4">
                   <div>
                     <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
                       <div className="flex justify-between">
                         <label className="  text-xs font-medium text-muted-foreground group-focus-within:text-sky-500">
-                          The require Classification 
+                          Expected duration
                         </label>
+                        <input
+                          className="bg-secondary w-72  border border-sky-300"
+                          value={duration}
+                          onChange={handelduration}
+                          type="number"
+                        />
                       </div>
-
-
-                      <div className="flex items-center">
-      <div className="flex space-x-3">
-        <div className="flex items-center">
-          <input
-            //onChange={handelKeyWordValue}
-            type="radio"
-            name="Location"
-            value="1"
-            className="bg-transparent text-foreground focus:ring-teal-500"
-          />
-          <label className="pl-1">1</label>
-        </div>
-        <div className="flex items-center">
-          <input
-            //onChange={handelKeyWordValue}
-            type="radio"
-            name="Location"
-            value="2"
-            className="bg-transparent text-foreground focus:ring-teal-500"
-          />
-          <label className="pl-1">2</label>
-        </div>
-        <div className="flex items-center">
-          <input
-            //onChange={handelKeyWordValue}
-            type="radio"
-            name="Location"
-            value="3"
-            className="bg-transparent text-foreground focus:ring-teal-500"
-          />
-          <label className="pl-1">3</label>
-        </div>
-        <div className="flex items-center">
-          <input
-            //onChange={handelKeyWordValue}
-            type="radio"
-            name="Location"
-            value="4"
-            className="bg-transparent text-foreground focus:ring-teal-500"
-          />
-          <label className="pl-1">4</label>
-        </div>
-        <div className="flex items-center">
-          <input
-            //onChange={handelKeyWordValue}
-            type="radio"
-            name="Location"
-            value="5"
-            className="bg-transparent text-foreground focus:ring-teal-500"
-          />
-          <label className="pl-1">5</label>
-        </div>
-        <div className="flex items-center">
-          <input
-            //onChange={handelKeyWordValue}
-            type="radio"
-            name="Location"
-            value="6"
-            className="bg-transparent text-foreground focus:ring-teal-500"
-          />
-          <label className="pl-1">6</label>
-        </div>
-        <div className="flex items-center">
-          <input
-            //onChange={handelKeyWordValue}
-            type="radio"
-            name="Location"
-            value="7"
-            className="bg-transparent text-foreground focus:ring-teal-500"
-          />
-          <label className="pl-1">7</label>
-        </div>
-      </div>
-    </div>
                     </div>
                   </div>
                 </div>
 
+                <div className="mt-4">
+                  <div>
+                    <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
+                      <div className="flex justify-between">
+                        <label className="  text-xs font-medium text-muted-foreground group-focus-within:text-sky-500">
+                          Expected Net Present Value
+                        </label>
+                        <input
+                          className="bg-secondary w-72 border border-sky-300"
+                          value={Present}
+                          onChange={handelPresent}
+                          type="number"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="mt-4 pt-10 flex items-center justify-around  gap-x-2 animate-pulse">
                   <button
-                    onClick={ ()=> onSubmit() }
+                    onClick={() => onSubmit()}
                     className="bg-ter  text-black inline-flex items-center justify-center rounded-3xl text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:ring hover:ring-white h-10 px-4 py-2 duration-200"
                   >
                     Create A New Tender
