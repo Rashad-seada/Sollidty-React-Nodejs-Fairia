@@ -297,7 +297,7 @@ function CreateTender() {
                   </div>
                 </div>
 
-                <div className="mt-4">
+                {/* <div className="mt-4">
                   <div>
                     <div className="group relative rounded-lg border-b focus-within:border-sky-500 px-3 pb-1.5 pt-2.5 duration-200">
                       <div className="flex justify-between">
@@ -318,7 +318,7 @@ function CreateTender() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="mt-4">
                   <div>
