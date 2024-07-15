@@ -159,7 +159,7 @@ const [BOQ,setBOQ]=useState("")
               55- Priced BOQ ?
             </label>
             <input
-            className="text-sky-400 pl-20 pt-5"
+            className="text-sky-400 pl-16 pt-5"
             value={BOQ}
               // checked={selectedAnswer?.[question.id] === option.value}
               onChange={(event) =>
