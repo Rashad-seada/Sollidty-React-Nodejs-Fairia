@@ -11,7 +11,7 @@ const QuestionForm = () => {
   const [selectedAnswerTwo, setSelectedAnswerTwo] = useState("");
   const [selectedAnswerThree, setSelectedAnswerThree] = useState("");
   const { completeApplication } = useContext(TenderAppContext);
-
+const [BOQ,setBOQ]=useState("")
   useEffect(() => {
     for (let i = 0; i <= 52; i++) {
       selectedAnswer[i] = "1";
@@ -58,7 +58,7 @@ const QuestionForm = () => {
   };
 
   return (
-    <div>
+    <div className="bg-primary">
       <div className="bg-primary text-xl pt-28 ">
         <p className="flex justify-center text-7xl pb-20  text-sky-400">
           Questions
@@ -154,6 +154,26 @@ const QuestionForm = () => {
           </div>
         </div>
 
+        <div className="flex pb-9 text-white ">
+            <label className="  text-white pl-40 pr-96">
+              55- Price BOQ ?
+            </label>
+            <input
+            className="text-sky-400 pl-20 pt-5"
+            value={BOQ}
+              // checked={selectedAnswer?.[question.id] === option.value}
+              onChange={(event) =>
+                setBOQ(
+                  console.log(event.target.value),
+                  event.target.value
+                )
+              }
+              type="file"
+              cl6assName="bg-secondary ml-5 border border-sky-400 rounded-md pl-3"
+            />
+          </div>
+        </div>
+
         <div className=" flex justify-center items-center pt-24 pb-60  ">
           <Link
             className=" flex justify-center items-center bg-sky-400 p-1 text-lg  w-40 h-10 rounded-xl  text-black hover:bg-sky-500 hover:text-white"
@@ -163,7 +183,6 @@ const QuestionForm = () => {
           </Link>
         </div>
       </div>
-    </div>
   );
 };
 
