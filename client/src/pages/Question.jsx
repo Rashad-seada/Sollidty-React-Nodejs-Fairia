@@ -156,7 +156,7 @@ const [BOQ,setBOQ]=useState("")
 
         <div className="flex pb-9 text-white ">
             <label className="  text-white pl-40 pr-96">
-              55- Price BOQ ?
+              55- Priced BOQ ?
             </label>
             <input
             className="text-sky-400 pl-20 pt-5"
